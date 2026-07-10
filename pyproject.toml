@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "archDraw"
+version = "0.1.0"
+description = "A dual-interface architecture diagramming tool"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "textX",
+    "pyvips",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-snapshot",
+]
+
+[project.scripts]
+archdraw = "archDraw.cli:main"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/archDraw"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

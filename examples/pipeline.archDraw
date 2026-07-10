@@ -1,0 +1,65 @@
+architecture "Real-Time User Analytics Pipeline" {
+    direction: left-right
+
+    actor "Mobile User" as user
+
+    // VPC Boundary
+    box "GCP Virtual Private Cloud (VPC)" as vpc {
+        layout: vertical
+        
+        // Load Balancing Layer
+        gcp::network::CloudLoadBalancing "Global HTTPs LB" as lb
+        
+        // Processing Layer
+        stack "Compute & Ingestion" {
+            direction: left-right
+            
+            layer "API Gateway" {
+                gcp::compute::CloudRun "Ingestion API" as api
+            }
+            
+            layer "Event Bus" {
+                gcp::analytics::PubSub "Events Topic" as pubsub
+            }
+        }
+        
+        // Analytics Layer
+        stack "Data Processing & Storage" {
+            direction: left-right
+            
+            layer "Stream Processing" {
+                gcp::analytics::Dataflow "Streaming ETL Job" as dataflow
+            }
+            
+            layer "Persistence" {
+                layout: vertical
+                gcp::storage::CloudStorage "Raw Data Lake" as gcs
+                gcp::analytics::BigQuery "Analytics DWH" as bq
+            }
+        }
+    }
+
+    // External BI Tool
+    box "Business Intelligence" {
+        gcp::analytics::Looker "Looker Dashboards" as looker
+    }
+
+    // -----------------------------------------------------
+    // Connections & Flows
+    // -----------------------------------------------------
+    
+    // User flow
+    user -> lb : "HTTPS JSON Payload"
+    lb -> api : "Route traffic"
+    
+    // Core Dataflow (Thick arrows)
+    api => pubsub : "Publish Event"
+    pubsub => dataflow : "Subscribe / Stream"
+    
+    // Forked writes
+    dataflow => gcs : "Backup Raw Events"
+    dataflow => bq : "Write Aggregated Metrics"
+    
+    // Analytical reads
+    looker -> bq : "Query Data" [color="blue", style="dashed"]
+}
