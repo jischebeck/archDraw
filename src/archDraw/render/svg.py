@@ -147,9 +147,10 @@ class SVGRenderer:
                     char_width_factor=7.5
                 )
                 
+                opacity_attr = f' opacity="{params["opacity"]}"' if params.get("opacity") and params["opacity"] != "1" else ""
                 return f"""
                 <rect x="{element.x}" y="{element.y}" width="{element.width}" height="{element.height}" 
-                      fill="{params['fill_color']}" stroke="{params['stroke_color']}" stroke-width="{params['stroke_width']}" rx="{params['rx']}" />
+                      fill="{params['fill_color']}" stroke="{params['stroke_color']}" stroke-width="{params['stroke_width']}" rx="{params['rx']}"{opacity_attr} />
                 {label_svg}
                 """
                 
@@ -170,9 +171,10 @@ class SVGRenderer:
             children_svg = "".join([self._render_element(child) for child in element.children])
             stroke_dash = f'stroke-dasharray="{params["stroke_dasharray"]}"' if params.get("stroke_dasharray") else ""
             
+            opacity_attr = f' opacity="{params["opacity"]}"' if params.get("opacity") and params["opacity"] != "1" else ""
             return f"""
             <rect x="{element.x}" y="{element.y}" width="{element.width}" height="{element.height}" 
-                  fill="{params['fill_color']}" stroke="{params['stroke_color']}" stroke-width="{params['stroke_width']}" {stroke_dash} rx="{params['rx']}" />
+                  fill="{params['fill_color']}" stroke="{params['stroke_color']}" stroke-width="{params['stroke_width']}" {stroke_dash} rx="{params['rx']}"{opacity_attr} />
             {label_svg}
             {children_svg}
             """

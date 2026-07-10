@@ -3,8 +3,8 @@ architecture "Real-Time User Analytics Pipeline" {
 
     actor "Mobile User" as user
 
-    // VPC Boundary
-    box "GCP Virtual Private Cloud (VPC)" as vpc {
+    // VPC Boundary — solid blue border with a light blue tint
+    box "GCP Virtual Private Cloud (VPC)" as vpc [fill_color="#E3F2FD", border_color="#1565C0", border_style="solid"] {
         layout: vertical
         
         // Load Balancing Layer
@@ -14,24 +14,24 @@ architecture "Real-Time User Analytics Pipeline" {
         stack "Compute & Ingestion" {
             direction: left-right
             
-            layer "API Gateway" {
+            layer "API Gateway" [fill_color="#FFF8E1", border_color="#F9A825"] {
                 gcp::compute::CloudRun "Ingestion API" as api
             }
             
-            layer "Event Bus" {
+            layer "Event Bus" [fill_color="#F3E5F5", border_color="#8E24AA"] {
                 gcp::analytics::PubSub "Events Topic" as pubsub
             }
         }
         
         // Analytics Layer
-        stack "Data Processing & Storage" {
+        stack "Data Processing & Storage" [border_color="#2E7D32", border_style="solid"] {
             direction: left-right
             
             layer "Stream Processing" {
                 gcp::analytics::Dataflow "Streaming ETL Job" as dataflow
             }
             
-            layer "Persistence" {
+            layer "Persistence" [fill_color="#E8F5E9", text_color="#1B5E20"] {
                 layout: vertical
                 gcp::storage::CloudStorage "Raw Data Lake" as gcs
                 gcp::analytics::BigQuery "Analytics DWH" as bq
@@ -39,8 +39,8 @@ architecture "Real-Time User Analytics Pipeline" {
         }
     }
 
-    // External BI Tool
-    box "Business Intelligence" {
+    // External BI Tool — green accent
+    box "Business Intelligence" [fill_color="#E8F5E9", border_color="#43A047", border_style="solid"] {
         gcp::analytics::Looker "Looker Dashboards" as looker
     }
 

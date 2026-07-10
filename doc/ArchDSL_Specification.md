@@ -56,11 +56,75 @@ General-purpose architectural nodes mapped to standard shapes:
 
 ---
 
-## 3. Connections and Dataflows
+## 3. Element Style Attributes
+
+All structural elements — containers (`box`, `stack`, `layer`) and generic nodes — accept inline style attributes via bracket notation `[...]`. These attributes override the theme defaults for individual elements.
+
+### 3.1. Attribute Syntax
+
+Attributes are declared after the element declaration (and after any `as alias` clause), enclosed in square brackets as comma-separated `key="value"` pairs:
+
+```dsl
+box "My Box" as mybox [fill_color="#E3F2FD", border_color="#1565C0"] {
+    ...
+}
+
+component "Auth Service" as auth [fill_color="#FFF2E6", border_color="#E27218"]
+```
+
+### 3.2. Available Style Attributes
+
+The following attributes are recognised by the rendering engine on **containers** and **nodes**:
+
+| Attribute | Applies To | Description | Example |
+| --- | --- | --- | --- |
+| `fill_color` | Containers, Nodes | Background fill colour (CSS colour or hex) | `fill_color="#E3F2FD"` |
+| `border_color` | Containers, Nodes | Border / stroke colour | `border_color="#1565C0"` |
+| `text_color` | Containers, Nodes | Label text colour | `text_color="#1B5E20"` |
+| `opacity` | Containers, Nodes | Element opacity, `0.0` – `1.0` | `opacity="0.6"` |
+| `border_style` | Containers | Border line style: `solid`, `dashed`, `dotted` | `border_style="solid"` |
+| `border_width` | Containers | Border stroke width in pixels | `border_width="3"` |
+| `color` | Containers, Nodes | Shorthand alias for `border_color` | `color="red"` |
+| `fill` | Containers, Nodes | Shorthand alias for `fill_color` | `fill="#FFF8E1"` |
+
+> **Note:** When both a shorthand (`color`) and its long form (`border_color`) are specified, the long form takes precedence.
+
+### 3.3. Container Style Examples
+
+```dsl
+// Solid blue VPC boundary with light blue background
+box "VPC" as vpc [fill_color="#E3F2FD", border_color="#1565C0", border_style="solid"] {
+    ...
+}
+
+// Semi-transparent overlay
+box "Shadow Zone" [fill_color="#263238", opacity="0.4", border_style="dotted"] {
+    ...
+}
+
+// Green accent with custom text colour
+layer "Persistence" [fill_color="#E8F5E9", text_color="#1B5E20", border_color="#43A047"] {
+    ...
+}
+```
+
+### 3.4. Node Style Examples
+
+```dsl
+// Highlighted warning node
+service "Rate Limiter" as rl [fill_color="#FFF3E0", border_color="#EF6C00"]
+
+// Greyed-out deprecated component
+component "Legacy API" [fill_color="#ECEFF1", border_color="#90A4AE", opacity="0.5"]
+```
+
+---
+
+## 4. Connections and Dataflows
 
 Connections should generally be defined outside of the structural blocks to keep the layout definitions clean. The engine routes connections optimally without breaking the rigid container constraints.
 
-### 3.1. Syntax Types
+### 4.1. Syntax Types
 
 Different arrow types carry distinct semantic meanings, which map to line styles (solid, dashed, thickened) in the rendered output.
 
@@ -72,7 +136,7 @@ Different arrow types carry distinct semantic meanings, which map to line styles
 | `~>` | Stream / Continuous connection | Wavy line, standard arrow |
 | `<->` / `<=>` | Bidirectional flow | Double-headed arrows |
 
-### 3.2. Connection Attributes
+### 4.2. Connection Attributes
 
 Attributes can be attached to connections using bracket notation `[...]`.
 
@@ -85,7 +149,7 @@ spark_node => datalake : "Daily Batch Write" [weight="bold"]
 
 ---
 
-## 4. Google Cloud Platform (GCP) Component Library
+## 5. Google Cloud Platform (GCP) Component Library
 
 archDraw natively supports cloud provider icons via namespaces. The Google Cloud standard library uses the `gcp::[category]::[Service]` namespace. When declared, the rendering engine automatically applies the official Google Cloud icon, standard GCP colors, and appropriate shape styling.
 
@@ -98,7 +162,7 @@ gcp::analytics::BigQuery "Data Warehouse" as bq
 
 ```
 
-### 4.1. Compute
+### 5.1. Compute
 
 | Identifier | Service Name | Description |
 | --- | --- | --- |
@@ -109,7 +173,7 @@ gcp::analytics::BigQuery "Data Warehouse" as bq
 | `gcp::compute::GKE` | Google Kubernetes Engine | Managed Kubernetes |
 | `gcp::compute::BareMetalSolution` | Bare Metal Solution | Hardware for specialized workloads |
 
-### 4.2. Storage
+### 5.2. Storage
 
 | Identifier | Service Name | Description |
 | --- | --- | --- |
@@ -118,7 +182,7 @@ gcp::analytics::BigQuery "Data Warehouse" as bq
 | `gcp::storage::Filestore` | Filestore | High-performance file storage |
 | `gcp::storage::LocalSSD` | Local SSD | Locally attached block storage |
 
-### 4.3. Databases
+### 5.3. Databases
 
 | Identifier | Service Name | Description |
 | --- | --- | --- |
@@ -129,7 +193,7 @@ gcp::analytics::BigQuery "Data Warehouse" as bq
 | `gcp::database::Memorystore` | Memorystore | Managed Redis and Memcached |
 | `gcp::database::AlloyDB` | AlloyDB | PostgreSQL-compatible database |
 
-### 4.4. Data Analytics & Streaming
+### 5.4. Data Analytics & Streaming
 
 | Identifier | Service Name | Description |
 | --- | --- | --- |
@@ -141,7 +205,7 @@ gcp::analytics::BigQuery "Data Warehouse" as bq
 | `gcp::analytics::DataCatalog` | Data Catalog | Data discovery and metadata |
 | `gcp::analytics::Composer` | Cloud Composer | Managed Apache Airflow workflow orchestration |
 
-### 4.5. Networking
+### 5.5. Networking
 
 | Identifier | Service Name | Description |
 | --- | --- | --- |
@@ -153,7 +217,7 @@ gcp::analytics::BigQuery "Data Warehouse" as bq
 | `gcp::network::CloudRouter` | Cloud Router | Dynamic routing (BGP) |
 | `gcp::network::CloudNAT` | Cloud NAT | Network address translation |
 
-### 4.6. AI & Machine Learning
+### 5.6. AI & Machine Learning
 
 | Identifier | Service Name | Description |
 | --- | --- | --- |
@@ -163,7 +227,7 @@ gcp::analytics::BigQuery "Data Warehouse" as bq
 | `gcp::ai::TranslationAPI` | Translation API | Language translation |
 | `gcp::ai::NaturalLanguage` | Natural Language API | Text parsing and analysis |
 
-### 4.7. Security, Identity & Management
+### 5.7. Security, Identity & Management
 
 | Identifier | Service Name | Description |
 | --- | --- | --- |
@@ -176,17 +240,18 @@ gcp::analytics::BigQuery "Data Warehouse" as bq
 
 ---
 
-## 5. Comprehensive Example: GCP Serverless Data Pipeline
+## 6. Comprehensive Example: GCP Serverless Data Pipeline
 
-Below is a full example illustrating the structural rules, dataflows, and GCP components working together.
+Below is a full example illustrating structural rules, dataflows, GCP components, and **inline style attributes** working together.
 
 ```dsl
 architecture "Real-Time User Analytics Pipeline" {
+    direction: left-right
 
     actor "Mobile User" as user
 
-    // VPC Boundary
-    box "GCP Virtual Private Cloud (VPC)" as vpc {
+    // VPC Boundary — solid blue border with light blue fill
+    box "GCP Virtual Private Cloud (VPC)" as vpc [fill_color="#E3F2FD", border_color="#1565C0", border_style="solid"] {
         layout: vertical
         
         // Load Balancing Layer
@@ -196,24 +261,24 @@ architecture "Real-Time User Analytics Pipeline" {
         stack "Compute & Ingestion" {
             direction: left-right
             
-            layer "API Gateway" {
+            layer "API Gateway" [fill_color="#FFF8E1", border_color="#F9A825"] {
                 gcp::compute::CloudRun "Ingestion API" as api
             }
             
-            layer "Event Bus" {
+            layer "Event Bus" [fill_color="#F3E5F5", border_color="#8E24AA"] {
                 gcp::analytics::PubSub "Events Topic" as pubsub
             }
         }
         
         // Analytics Layer
-        stack "Data Processing & Storage" {
+        stack "Data Processing & Storage" [border_color="#2E7D32", border_style="solid"] {
             direction: left-right
             
             layer "Stream Processing" {
                 gcp::analytics::Dataflow "Streaming ETL Job" as dataflow
             }
             
-            layer "Persistence" {
+            layer "Persistence" [fill_color="#E8F5E9", text_color="#1B5E20"] {
                 layout: vertical
                 gcp::storage::CloudStorage "Raw Data Lake" as gcs
                 gcp::analytics::BigQuery "Analytics DWH" as bq
@@ -221,8 +286,8 @@ architecture "Real-Time User Analytics Pipeline" {
         }
     }
 
-    // External BI Tool
-    box "Business Intelligence" {
+    // External BI Tool — green accent
+    box "Business Intelligence" [fill_color="#E8F5E9", border_color="#43A047", border_style="solid"] {
         gcp::analytics::Looker "Looker Dashboards" as looker
     }
 

@@ -65,10 +65,27 @@ class DefaultTheme:
             })
             
         # Semantic rendering: translate attributes/tags
-        if "color" in node.attributes:
-            params["stroke_color"] = node.attributes["color"]
-        if "fill" in node.attributes:
-            params["fill_color"] = node.attributes["fill"]
+        attrs = node.attributes
+
+        # Stroke / border color: "color" or "border_color"
+        if "color" in attrs:
+            params["stroke_color"] = attrs["color"]
+        if "border_color" in attrs:
+            params["stroke_color"] = attrs["border_color"]
+
+        # Fill color: "fill" or "fill_color"
+        if "fill" in attrs:
+            params["fill_color"] = attrs["fill"]
+        if "fill_color" in attrs:
+            params["fill_color"] = attrs["fill_color"]
+
+        # Text color
+        if "text_color" in attrs:
+            params["text_color"] = attrs["text_color"]
+
+        # Opacity
+        if "opacity" in attrs:
+            params["opacity"] = attrs["opacity"]
             
         # Special tags
         if "secure" in node.tags:
@@ -90,12 +107,47 @@ class DefaultTheme:
             "rx": 8,
             "text_color": "#3C4043",
             "text_size": 16,
-            "font_weight": "bold"
+            "font_weight": "bold",
+            "opacity": "1"
         }
         
-        if "color" in container.attributes:
-            params["stroke_color"] = container.attributes["color"]
-        if "fill" in container.attributes:
-            params["fill_color"] = container.attributes["fill"]
-            
+        attrs = container.attributes
+
+        # Stroke / border color: "color" or "border_color"
+        if "color" in attrs:
+            params["stroke_color"] = attrs["color"]
+        if "border_color" in attrs:
+            params["stroke_color"] = attrs["border_color"]
+
+        # Fill color: "fill" or "fill_color"
+        if "fill" in attrs:
+            params["fill_color"] = attrs["fill"]
+        if "fill_color" in attrs:
+            params["fill_color"] = attrs["fill_color"]
+
+        # Text color
+        if "text_color" in attrs:
+            params["text_color"] = attrs["text_color"]
+
+        # Opacity (0.0 – 1.0)
+        if "opacity" in attrs:
+            params["opacity"] = attrs["opacity"]
+
+        # Border style override: "solid" removes dasharray, "dashed"/"dotted" set it
+        if "border_style" in attrs:
+            style = attrs["border_style"]
+            if style == "solid":
+                params["stroke_dasharray"] = ""
+            elif style == "dashed":
+                params["stroke_dasharray"] = "6,4"
+            elif style == "dotted":
+                params["stroke_dasharray"] = "2,3"
+
+        # Border width
+        if "border_width" in attrs:
+            try:
+                params["stroke_width"] = float(attrs["border_width"])
+            except ValueError:
+                pass
+
         return params
