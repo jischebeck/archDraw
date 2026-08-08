@@ -223,8 +223,8 @@ def test_connection_lines_export(tmp_path):
     with open(output_file, "r") as f:
         svg_content = f.read()
         
-    # Check that line coordinates and label are exported correctly
-    assert "<line" in svg_content
+    # Check that path coordinates and label are exported correctly
+    assert "<path" in svg_content
     assert 'marker-end="url(#arrow)"' in svg_content
     assert "calls" in svg_content
 
@@ -243,10 +243,13 @@ def test_connection_lines_export(tmp_path):
     with open(output_file2, "r") as f:
         svg_content2 = f.read()
         
-    # Get the line attributes
-    match = re.search(r'<line x1="([^"]+)" y1="([^"]+)" x2="([^"]+)" y2="([^"]+)"', svg_content2)
+    # Get the path attributes (we expect HVH path)
+    match = re.search(r'<path d="M ([^ ]+) ([^ ]+) H [^ ]+ V ([^ ]+) H ([^ ]+)"', svg_content2)
     assert match
-    x1, y1, x2, y2 = float(match.group(1)), float(match.group(2)), float(match.group(3)), float(match.group(4))
+    x1 = float(match.group(1))
+    y1 = float(match.group(2))
+    y2 = float(match.group(3))
+    x2 = float(match.group(4))
     
     # Visual icon center-left is x2 = icon_x. Since icon_size=60,
     # icon_x = gcp_b.x + (gcp_b.width - 60)/2

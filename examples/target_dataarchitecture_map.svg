@@ -215,37 +215,37 @@
                 
             
             
-                    <line x1="166.25" y1="465.0" x2="455.0" y2="465.0" 
+                    <path d="M 166.25 465.0 H 310.625 V 465.0 H 455.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <line x1="515.0" y1="465.0" x2="455.0" y2="640.0" 
+                    <path d="M 485.0 495 V 552.5 H 485.0 V 610" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <line x1="515.0" y1="640.0" x2="580" y2="480.0" 
+                    <path d="M 485.0 610 V 575.0 H 650.0 V 540" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <line x1="720" y1="480.0" x2="80" y2="250.0" 
+                    <path d="M 580 480.0 H 400.0 V 250.0 H 220" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <line x1="400" y1="530.0" x2="245" y2="565.0" 
+                    <path d="M 315.0 640 V 572.5 H 315.0 V 505" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <line x1="385" y1="565.0" x2="455.0" y2="465.0" 
+                    <path d="M 385 565.0 H 420.0 V 465.0 H 455.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <line x1="385" y1="565.0" x2="455.0" y2="640.0" 
+                    <path d="M 385 565.0 H 420.0 V 640.0 H 455.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     

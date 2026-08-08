@@ -3,6 +3,7 @@ import re
 from archDraw.core.elements import ArchElement, Node, Container
 from archDraw.render.theme import DefaultTheme
 from archDraw.render.text import TextRenderer
+from archDraw.render.manhattan_routing import route_manhattan
 
 def embed_svg(svg_content: str, x: float, y: float, width: float, height: float) -> str:
     match = re.match(r'^<svg\b[^>]*>', svg_content)
@@ -200,15 +201,15 @@ class SVGRenderer:
                 if src and tgt:
                     src_pts = self.get_connection_endpoints(src)
                     tgt_pts = self.get_connection_endpoints(tgt)
-                    start_x, start_y = src_pts["right"]
-                    end_x, end_y = tgt_pts["left"]
+                    route = route_manhattan(src, tgt, src_pts, tgt_pts)
+                    path_d = route["path_d"]
+                    label_x = route["label_x"]
+                    label_y = route["label_y"]
                     
                     label_svg = ""
                     if conn.label:
-                        mid_x = (start_x + end_x) / 2
-                        mid_y = (start_y + end_y) / 2 - 5
                         label_svg = f"""
-                        <text x="{mid_x}" y="{mid_y}" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
+                        <text x="{label_x}" y="{label_y - 5}" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
                             {html.escape(conn.label)}
                         </text>
                         """
@@ -217,7 +218,7 @@ class SVGRenderer:
                     style_dash = 'stroke-dasharray="5,5"' if conn.attributes.get("style") == "dashed" else ""
                     
                     connection_svgs.append(f"""
-                    <line x1="{start_x}" y1="{start_y}" x2="{end_x}" y2="{end_y}" 
+                    <path d="{path_d}" fill="none"
                           stroke="{stroke_color}" stroke-width="2" marker-end="url(#arrow)" {style_dash} />
                     {label_svg}
                     """)
