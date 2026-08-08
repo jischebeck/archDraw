@@ -72,16 +72,22 @@ class DefaultTheme:
             params["stroke_color"] = attrs["color"]
         if "border_color" in attrs:
             params["stroke_color"] = attrs["border_color"]
+        if "strokeColor" in attrs:
+            params["stroke_color"] = attrs["strokeColor"]
 
         # Fill color: "fill" or "fill_color"
         if "fill" in attrs:
             params["fill_color"] = attrs["fill"]
         if "fill_color" in attrs:
             params["fill_color"] = attrs["fill_color"]
+        if "fillColor" in attrs:
+            params["fill_color"] = attrs["fillColor"]
 
         # Text color
         if "text_color" in attrs:
             params["text_color"] = attrs["text_color"]
+        if "fontColor" in attrs:
+            params["text_color"] = attrs["fontColor"]
 
         # Opacity
         if "opacity" in attrs:
@@ -118,16 +124,22 @@ class DefaultTheme:
             params["stroke_color"] = attrs["color"]
         if "border_color" in attrs:
             params["stroke_color"] = attrs["border_color"]
+        if "strokeColor" in attrs:
+            params["stroke_color"] = attrs["strokeColor"]
 
         # Fill color: "fill" or "fill_color"
         if "fill" in attrs:
             params["fill_color"] = attrs["fill"]
         if "fill_color" in attrs:
             params["fill_color"] = attrs["fill_color"]
+        if "fillColor" in attrs:
+            params["fill_color"] = attrs["fillColor"]
 
         # Text color
         if "text_color" in attrs:
             params["text_color"] = attrs["text_color"]
+        if "fontColor" in attrs:
+            params["text_color"] = attrs["fontColor"]
 
         # Opacity (0.0 – 1.0)
         if "opacity" in attrs:

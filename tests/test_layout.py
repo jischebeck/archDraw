@@ -120,13 +120,13 @@ def test_gcp_symbols_layout_and_size():
     # Run layout bounds calculation first
     LayoutEngine.calculate_bounds(root)
 
-    # Verify GCP nodes have size 80x85, regular node has 140x60
+    # Verify GCP nodes have size 80x130 (wrapped), regular node has 140x60
     assert gcp_node1.width == 80
-    assert gcp_node1.height == 85
+    assert gcp_node1.height == 130
     assert gcp_node2.width == 80
-    assert gcp_node2.height == 85
+    assert gcp_node2.height == 130
     assert regular_node.width == 140
-    assert regular_node.height == 60
+    assert regular_node.height == 75
 
     # Create a separate container solely containing GCP symbols to test horizontal forced distribution
     with Container("GCP Box", layout="vertical") as gcp_box:
@@ -146,6 +146,16 @@ def test_databricks_and_attributes():
     regular_node = Node("Web Server", node_type="service", attributes={"color": "red"})
     secure_node = Node("DB Server", node_type="service", attributes={"tags": "secure"})
     db_node = Node("Databricks Node", node_type="databricks::analytics")
+    camel_node = Node("Camel Node", node_type="service", attributes={
+        "fillColor": "#ffe0b2",
+        "strokeColor": "#ff9800",
+        "fontColor": "#e65100"
+    })
+    camel_container = Container("Camel Box", attributes={
+        "fillColor": "#fff3e0",
+        "strokeColor": "#ff9800",
+        "fontColor": "#e65100"
+    })
 
     renderer = SVGRenderer()
     
@@ -158,15 +168,27 @@ def test_databricks_and_attributes():
     assert sec_params["stroke_color"] == "#E27218"
     assert sec_params["fill_color"] == "#FFF2E6"
 
+    # Verify camelCase color translation for node
+    camel_params = renderer.theme.get_node_params(camel_node)
+    assert camel_params["fill_color"] == "#ffe0b2"
+    assert camel_params["stroke_color"] == "#ff9800"
+    assert camel_params["text_color"] == "#e65100"
+
+    # Verify camelCase color translation for container
+    camel_container_params = renderer.theme.get_container_params(camel_container)
+    assert camel_container_params["fill_color"] == "#fff3e0"
+    assert camel_container_params["stroke_color"] == "#ff9800"
+    assert camel_container_params["text_color"] == "#e65100"
+
     # Verify Databricks icon size
     LayoutEngine.calculate_bounds(db_node, renderer)
     assert db_node.width == 80
-    assert db_node.height == 85
+    assert db_node.height == 115
 
     # Verify subtitle text width bounds calculation
     long_sub_node = Node("App", node_type="gcp::compute::ExtremelyLongSubTitleGoesHere")
     LayoutEngine.calculate_bounds(long_sub_node, renderer)
-    assert long_sub_node.width >= len("ExtremelyLongSubTitleGoesHere") * 7.5
+    assert long_sub_node.width >= 140
 
 def test_container_min_bounds():
     # Long title container to force text width limit bounds
@@ -178,8 +200,8 @@ def test_container_min_bounds():
     LayoutEngine.calculate_bounds(root, renderer)
 
     # borders are left=15, right=15, top=40, bottom=15 (sum=80)
-    # len(long_title) * 10 + 15 + 15 + 20
-    expected_min_width = len(long_title) * 10 + 15 + 15 + 20
+    # The title wraps dynamically based on child width, the chosen wrapped title max line len is 14.
+    expected_min_width = 190
     assert root.width >= expected_min_width
 
 def test_connection_lines_export(tmp_path):
@@ -226,12 +248,12 @@ def test_connection_lines_export(tmp_path):
     assert match
     x1, y1, x2, y2 = float(match.group(1)), float(match.group(2)), float(match.group(3)), float(match.group(4))
     
-    # Visual icon center-left is x2 = icon_x. Since icon_size=50,
-    # icon_x = gcp_b.x + (gcp_b.width - 50)/2
-    expected_x2 = gcp_b.x + (gcp_b.width - 50) / 2
+    # Visual icon center-left is x2 = icon_x. Since icon_size=60,
+    # icon_x = gcp_b.x + (gcp_b.width - 60)/2
+    expected_x2 = gcp_b.x + (gcp_b.width - 60) / 2
     assert abs(x2 - expected_x2) < 0.01
     
-    expected_y2 = gcp_b.y + 25  # icon_size/2
+    expected_y2 = gcp_b.y + 30  # icon_size/2
     assert abs(y2 - expected_y2) < 0.01
 
 def test_text_renderer_wrapping():

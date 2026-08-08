@@ -1,0 +1,102 @@
+architecture "Data Platform Design" {
+    box "Data Strategy Layer" as g_strategy_layer {
+        layout: horizontal
+        direction: left-right
+        leaf "Domain-Driven Business Agility & Time-to-Market" as biz_domain_agility
+        leaf "Trustworthy, Quality-Assured Business Decision Making" as biz_trustworthy_data
+        leaf "Continuous Regulatory Compliance, Privacy & Sovereignty" as biz_regulatory_compliance
+        leaf "AI-Driven Advanced Automation & Operations Intelligence" as biz_intelligent_automation
+        leaf "Business Value Realization, OKR & ROI Alignment" as biz_business_value_tracking
+    }
+    box "Decentralized Technical Core Flow Layer" as g_technical_flow_layer {
+        layout: horizontal
+        direction: left-right
+        box "Edge & Connectivity" as g_edge_connectivity {
+            layout: vertical
+            direction: top-down
+            leaf "Edge Data Processing" as tech_edge_data_processing
+            leaf "Gateways & Hybrid Connectivity" as tech_gateways_hybrid_connectivity
+        }
+        box "Ingestion & Streams" as g_ingestion_streams {
+            layout: vertical
+            direction: top-down
+            leaf "Data Ingestion (Batch & API)" as tech_data_ingestion
+            leaf "Stream Analytics & Event-Driven Integration" as tech_stream_analytics
+        }
+        box "Storage & Engineering" as g_storage_engineering {
+            layout: vertical
+            direction: top-down
+            leaf "Object / Lakehouse Storage" as tech_lakehouse_storage
+            leaf "Data Warehousing" as tech_data_warehousing
+            leaf "ETL/ELT Data Processing" as tech_etl_elt_processing
+            leaf "Data & Pipeline Migration" as tech_data_pipeline_migration
+            leaf "Agentic Data Engineering & Copilots" as tech_agentic_data_engineering
+            leaf "Self-Service Data Preparation" as tech_self_service_prep
+        }
+        box "AI & MLOps/DataOps" as g_ai_orchestration {
+            layout: vertical
+            direction: top-down
+            leaf "ML / AI Workspace & Operations (MLOps)" as tech_ml_ai_workspace_mlops
+            leaf "Generative AI & Advanced Services" as tech_generative_ai_advanced
+            leaf "Data Orchestration & Workflows" as tech_data_orchestration_workflows
+            leaf "CI/CD & Infrastructure as Code" as tech_cicd_iac
+        }
+        box "Consumption & Value" as g_consumption_value {
+            layout: vertical
+            direction: top-down
+            leaf "Business Intelligence & Reporting" as tech_business_intelligence_reporting
+            leaf "Unified Semantic Layer / Data Virtualization" as tech_unified_semantic_layer
+            leaf "Data Sharing & Interoperability" as tech_data_sharing_interoperability
+            leaf "API Management & Data Delivery" as tech_api_management_delivery
+            leaf "Data Product Management" as tech_data_product_management
+            leaf "Value Tracking & ROI Measurement (OKRs)" as tech_value_tracking_roi_okrs
+            leaf "Data Demand Management" as tech_data_demand_management
+            leaf "Data Marketplace Management" as tech_data_marketplace_management
+        }
+    }
+    box "Computational Governance & Platform Operations Layer" as g_governance_ops_layer {
+        layout: horizontal
+        direction: left-right
+        leaf "Data Observability" as tech_data_observability
+        leaf "Automated Guardrails" as tech_automated_guardrails
+        leaf "Metadata Management & Data Cataloging" as tech_metadata_management_cataloging
+        leaf "Platform, FinOps & Cost Management" as tech_platform_finops_cost
+        leaf "Workspace & Data Design Management" as tech_workspace_data_design
+        leaf "Access Governance & Authorization" as tech_access_governance_authorization
+        leaf "Data Security & Privacy" as tech_data_security_privacy
+    }
+    group "Decentralized Technical Source Layer" as g_technical_source_layer
+    tech_edge_data_processing => biz_domain_agility
+    tech_gateways_hybrid_connectivity => biz_regulatory_compliance
+    tech_data_ingestion => biz_domain_agility
+    tech_stream_analytics => biz_domain_agility
+    tech_lakehouse_storage => biz_trustworthy_data
+    tech_data_warehousing => biz_trustworthy_data
+    tech_etl_elt_processing => biz_trustworthy_data
+    tech_data_pipeline_migration => biz_domain_agility
+    tech_agentic_data_engineering => biz_domain_agility
+    tech_agentic_data_engineering => biz_intelligent_automation
+    tech_self_service_prep => biz_domain_agility
+    tech_ml_ai_workspace_mlops => biz_intelligent_automation
+    tech_generative_ai_advanced => biz_intelligent_automation
+    tech_data_orchestration_workflows => biz_domain_agility
+    tech_cicd_iac => biz_domain_agility
+    tech_business_intelligence_reporting => biz_domain_agility
+    tech_unified_semantic_layer => biz_domain_agility
+    tech_data_sharing_interoperability => biz_domain_agility
+    tech_api_management_delivery => biz_domain_agility
+    tech_data_product_management => biz_business_value_tracking
+    tech_value_tracking_roi_okrs => biz_business_value_tracking
+    tech_data_demand_management => biz_business_value_tracking
+    tech_data_marketplace_management => biz_domain_agility
+    tech_data_marketplace_management => biz_business_value_tracking
+    tech_data_observability => biz_trustworthy_data
+    tech_automated_guardrails => biz_regulatory_compliance
+    tech_automated_guardrails => biz_trustworthy_data
+    tech_metadata_management_cataloging => biz_domain_agility
+    tech_metadata_management_cataloging => biz_trustworthy_data
+    tech_platform_finops_cost => biz_regulatory_compliance
+    tech_workspace_data_design => biz_domain_agility
+    tech_access_governance_authorization => biz_regulatory_compliance
+    tech_data_security_privacy => biz_regulatory_compliance
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Python 3.14 + OpenCode",
+
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  "workspaceFolder": "/workspace",
+
+  "remoteUser": "root",
+
+  "customizations": {
+    "zed": {
+      "languages": {
+        "Python": {
+          "language_servers": [
+            "pyright"
+          ],
+          "formatter": "language_server"
+        }
+      }
+    }
+  }
+}

@@ -2,16 +2,27 @@ import argparse
 import sys
 import os
 import html
-from archDraw import parse_dsl_file, LayoutEngine, SVGRenderer, export_png
+import platform
+from archDraw import __version__, parse_dsl_file, LayoutEngine, SVGRenderer
+
+try:
+    from archDraw import export_png
+except ImportError:
+    export_png = None
 
 def main():
     parser = argparse.ArgumentParser(description="archDraw CLI - Generate architecture diagrams from DSL.")
-    parser.add_argument("input", help="Path to the archDraw DSL file (.archDraw)")
+    parser.add_argument("-v", "--version", action="version", version=f"archdraw {__version__}")
+    parser.add_argument("input", nargs="?", help="Path to the archDraw DSL file (.archDraw)")
     parser.add_argument("-o", "--output", help="Path to the output image file (SVG or PNG)")
     parser.add_argument("-f", "--format", choices=["svg", "png"], help="Output format (svg or png). If not specified, inferred from output file extension.")
     parser.add_argument("-p", "--padding", type=int, default=50, help="Border padding around the diagram (default: 50)")
 
     args = parser.parse_args()
+
+    if not args.input:
+        parser.print_help()
+        sys.exit(0)
 
     if not os.path.exists(args.input):
         print(f"Error: Input file '{args.input}' does not exist.", file=sys.stderr)
@@ -56,6 +67,20 @@ def main():
         if out_format == "svg":
             renderer.export(root, output_path, connections)
         elif out_format == "png":
+            if export_png is None:
+                print("\nError: 'pyvips' is required for PNG export.", file=sys.stderr)
+                print("To fix this, please install libvips:")
+                system = platform.system()
+                if system == "Linux":
+                    print("  - Ubuntu/Debian: sudo apt-get install libvips-dev")
+                elif system == "Darwin":
+                    print("  - macOS (Homebrew): brew install vips")
+                elif system == "Windows":
+                    print("  - Download the appropriate wheel for pyvips or follow instructions at https://libvips.github.io/downloads/")
+                else:
+                    print("  - Follow instructions at https://libvips.github.io/downloads/")
+                print()
+                sys.exit(1)
             temp_svg = output_path + ".tmp.svg"
             renderer.export(root, temp_svg, connections)
             with open(temp_svg, "r") as f:
