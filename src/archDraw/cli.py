@@ -17,6 +17,8 @@ def main():
     parser.add_argument("-o", "--output", help="Path to the output image file (SVG or PNG)")
     parser.add_argument("-f", "--format", choices=["svg", "png"], help="Output format (svg or png). If not specified, inferred from output file extension.")
     parser.add_argument("-p", "--padding", type=int, default=50, help="Border padding around the diagram (default: 50)")
+    parser.add_argument("--manhattan", "--manhatten", action="store_true", help="Use Manhattan connection routing algorithm")
+    parser.add_argument("--grid", action="store_true", help="Use Grid obstacle-avoiding connection routing algorithm (default)")
 
     args = parser.parse_args()
 
@@ -36,9 +38,12 @@ def main():
         print(f"Error parsing DSL: {e}", file=sys.stderr)
         sys.exit(1)
 
+    # Determine routing algorithm
+    routing_algo = "manhattan" if args.manhattan else "grid"
+
     # Layout bounds
     print("Calculating layout dimensions...")
-    renderer = SVGRenderer()
+    renderer = SVGRenderer(routing=routing_algo)
     LayoutEngine.calculate_bounds(root, renderer)
     LayoutEngine.apply_offset(root, dx=args.padding, dy=args.padding)
 

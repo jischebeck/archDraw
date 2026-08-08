@@ -211,7 +211,7 @@ def test_connection_lines_export(tmp_path):
         a = Node("Node A")
         b = Node("Node B")
         
-    renderer = SVGRenderer()
+    renderer = SVGRenderer(routing="manhattan")
     LayoutEngine.calculate_bounds(root, renderer)
     LayoutEngine.apply_offset(root, dx=10, dy=10)
     
@@ -294,5 +294,27 @@ def test_child_scaling_in_container():
         
     LayoutEngine.calculate_bounds(stack2, renderer)
     assert layer3.height == layer4.height
+
+def test_grid_routing(tmp_path):
+    from archDraw.parser import DSLConnection
+    
+    with Container("Platform") as root:
+        a = Node("Node A")
+        b = Node("Node B")
+        
+    renderer = SVGRenderer(routing="grid")
+    LayoutEngine.calculate_bounds(root, renderer)
+    LayoutEngine.apply_offset(root, dx=10, dy=10)
+    
+    conn = DSLConnection(source="Node A", target="Node B", arrow="->")
+    output_file = tmp_path / "test_grid_conn.svg"
+    renderer.export(root, str(output_file), connections=[conn])
+    
+    with open(output_file, "r") as f:
+        svg_content = f.read()
+        
+    assert "<path" in svg_content
+    assert " L " in svg_content
+
 
 

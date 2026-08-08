@@ -215,37 +215,37 @@
                 
             
             
-                    <path d="M 166.25 465.0 H 310.625 V 465.0 H 455.0" fill="none"
+                    <path d="M 166.25 465.0 L 190 465.0 L 190 370 L 430 370 L 430 465.0 L 455.0 465.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <path d="M 485.0 495 V 552.5 H 485.0 V 610" fill="none"
+                    <path d="M 485.0 495 L 485.0 510 L 490 510 L 490 610 L 485.0 590 L 485.0 610" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <path d="M 485.0 610 V 480.0 H 580" fill="none"
+                    <path d="M 485.0 610 L 485.0 590 L 490 590 L 490 600 L 560 600 L 560 480.0 L 580 480.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <path d="M 580 480.0 H 400.0 V 250.0 H 220" fill="none"
+                    <path d="M 580 480.0 L 560 480.0 L 560 250 L 220 250.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <path d="M 315.0 640 V 632.5 H 315.0 V 625" fill="none"
+                    <path d="M 315.0 640 L 315.0 660 L 310 660 L 310 625 L 315.0 650 L 315.0 625" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <path d="M 385 565.0 H 420.0 V 465.0 H 455.0" fill="none"
+                    <path d="M 385 565.0 L 410 565.0 L 410 570 L 430 570 L 430 465.0 L 455.0 465.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <path d="M 385 565.0 H 420.0 V 640.0 H 455.0" fill="none"
+                    <path d="M 385 565.0 L 410 565.0 L 410 570 L 430 570 L 430 640.0 L 455.0 640.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     

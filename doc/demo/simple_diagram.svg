@@ -87,19 +87,19 @@
             
             
             
-                    <path d="M 135.0 150 V 177.5 H 150.0 V 205" fill="none"
+                    <path d="M 135.0 150 L 135.0 170 L 150 170 L 150.0 205" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
-                        <text x="142.5" y="172.5" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
+                        <text x="142.5" y="165.0" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
                             requests
                         </text>
                         
                     
 
-                    <path d="M 220 242.5 H 232.5 V 235.0 H 245.0" fill="none"
+                    <path d="M 220 242.5 L 240 242.5 L 240 230 L 230 235.0 L 245.0 235.0" fill="none"
                           stroke="blue" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="5,5" />
                     
-                        <text x="232.5" y="233.75" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
+                        <text x="240.0" y="231.25" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
                             queries
                         </text>
                         

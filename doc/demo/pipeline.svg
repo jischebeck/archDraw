@@ -322,64 +322,64 @@
             
             
             
-                    <path d="M 205 127.5 H 238.75 V 160.0 H 272.5" fill="none"
+                    <path d="M 205 127.5 L 230 127.5 L 230 130 L 250 130 L 250 160.0 L 272.5 160.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
-                        <text x="238.75" y="138.75" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
+                        <text x="240.0" y="125.0" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
                             HTTPS JSON Payload
                         </text>
                         
                     
 
-                    <path d="M 332.5 160.0 H 378.75 V 255.0 H 425.0" fill="none"
+                    <path d="M 332.5 160.0 L 410 160 L 410 255.0 L 425.0 255.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
-                        <text x="378.75" y="202.5" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
+                        <text x="410.0" y="202.5" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
                             Route traffic
                         </text>
                         
                     
 
-                    <path d="M 485.0 255.0 H 517.5 V 247.5 H 550.0" fill="none"
+                    <path d="M 485.0 255.0 L 510 255.0 L 510 250 L 520 250 L 530 247.5 L 550.0 247.5" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
-                        <text x="517.5" y="246.25" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
+                        <text x="515.0" y="245.0" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
                             Publish Event
                         </text>
                         
                     
 
-                    <path d="M 690.0 247.5 H 727.5 V 270.0 H 765.0" fill="none"
+                    <path d="M 690.0 247.5 L 710 247.5 L 710 250 L 750 250 L 750 270.0 L 765.0 270.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
-                        <text x="727.5" y="253.75" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
+                        <text x="730.0" y="245.0" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
                             Subscribe / Stream
                         </text>
                         
                     
 
-                    <path d="M 905.0 270.0 H 935.0 V 240.0 H 965.0" fill="none"
+                    <path d="M 905.0 270.0 L 950 270 L 950 240.0 L 965.0 240.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
-                        <text x="935.0" y="250.0" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
+                        <text x="950.0" y="250.0" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
                             Backup Raw Events
                         </text>
                         
                     
 
-                    <path d="M 905.0 270.0 H 985.0 V 240.0 H 1065.0" fill="none"
+                    <path d="M 905.0 270.0 L 930 270.0 L 930 200 L 1050 200 L 1050 240.0 L 1065.0 240.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
-                        <text x="985.0" y="250.0" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
+                        <text x="990.0" y="195.0" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
                             Write Aggregated Metrics
                         </text>
                         
                     
 
-                    <path d="M 1220.0 160.0 H 1172.5 V 240.0 H 1125.0" fill="none"
+                    <path d="M 1220.0 160.0 L 1200 160.0 L 1200 240 L 1125.0 240.0" fill="none"
                           stroke="blue" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="5,5" />
                     
-                        <text x="1172.5" y="195.0" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
+                        <text x="1200.0" y="195.0" font-family="sans-serif" font-size="10" fill="#70757A" text-anchor="middle">
                             Query Data
                         </text>
                         

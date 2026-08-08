@@ -131,32 +131,32 @@
             
             
             
-                    <path d="M 235 160.0 H 227.5 V 160.0 H 220" fill="none"
+                    <path d="M 235 160.0 L 220 160.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <path d="M 390 160.0 H 382.5 V 160.0 H 375" fill="none"
+                    <path d="M 390 160.0 L 375 160.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <path d="M 235 290.0 H 227.5 V 290.0 H 220" fill="none"
+                    <path d="M 235 290.0 L 220 290.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <path d="M 390 290.0 H 382.5 V 290.0 H 375" fill="none"
+                    <path d="M 390 290.0 L 375 290.0" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <path d="M 220 435.0 H 305.0 V 320" fill="none"
+                    <path d="M 220 435.0 L 305.0 320" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <path d="M 305.0 405 V 362.5 H 305.0 V 320" fill="none"
+                    <path d="M 305.0 405 L 305.0 390 L 310 390 L 310 320 L 305.0 340 L 305.0 320" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     

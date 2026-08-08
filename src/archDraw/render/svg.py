@@ -4,6 +4,7 @@ from archDraw.core.elements import ArchElement, Node, Container
 from archDraw.render.theme import DefaultTheme
 from archDraw.render.text import TextRenderer
 from archDraw.render.manhattan_routing import route_manhattan
+from archDraw.render.grid_routing import route_grid
 
 def embed_svg(svg_content: str, x: float, y: float, width: float, height: float) -> str:
     match = re.match(r'^<svg\b[^>]*>', svg_content)
@@ -17,8 +18,9 @@ def embed_svg(svg_content: str, x: float, y: float, width: float, height: float)
 
 class SVGRenderer:
     """Generates the final SVG string from the laid-out IR."""
-    def __init__(self, theme=None):
+    def __init__(self, theme=None, routing="grid"):
         self.theme = theme or DefaultTheme()
+        self.routing = routing
 
     def get_connection_endpoints(self, element: ArchElement) -> dict:
         """
@@ -201,7 +203,11 @@ class SVGRenderer:
                 if src and tgt:
                     src_pts = self.get_connection_endpoints(src)
                     tgt_pts = self.get_connection_endpoints(tgt)
-                    route = route_manhattan(src, tgt, src_pts, tgt_pts)
+                    if self.routing == "grid":
+                        all_elements = list(set(element_map.values()))
+                        route = route_grid(src, tgt, src_pts, tgt_pts, all_elements)
+                    else:
+                        route = route_manhattan(src, tgt, src_pts, tgt_pts)
                     path_d = route["path_d"]
                     label_x = route["label_x"]
                     label_y = route["label_y"]
