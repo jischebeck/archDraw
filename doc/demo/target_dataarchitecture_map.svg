@@ -225,7 +225,7 @@
                     
                     
 
-                    <path d="M 485.0 610 V 575.0 H 650.0 V 540" fill="none"
+                    <path d="M 485.0 610 V 480.0 H 580" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
@@ -235,7 +235,7 @@
                     
                     
 
-                    <path d="M 315.0 640 V 572.5 H 315.0 V 505" fill="none"
+                    <path d="M 315.0 640 V 632.5 H 315.0 V 625" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
