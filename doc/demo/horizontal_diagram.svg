@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="425" height="215">
+            <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5"
+                        markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#70757A" />
+                </marker>
+            </defs>
+            
+            <rect x="50" y="50" width="325" height="115" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="65" y="75" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="65" dy="0">Horizontal Diagram</tspan>
+        </text>
+        
+            
+                <rect x="65" y="90" width="140" height="60" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="135.0" y="125.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="135.0" dy="0">User</tspan>
+        </text>
+        
+                
+                <rect x="220" y="90" width="140" height="60" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="290.0" y="125.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="290.0" dy="0">Web</tspan>
+        </text>
+        
+                
+            
+            
+        </svg>

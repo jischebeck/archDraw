@@ -1,0 +1,623 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1230" height="1785">
+            <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5"
+                        markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#70757A" />
+                </marker>
+            </defs>
+            
+            <rect x="50" y="50" width="1130" height="1685" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="65" y="75" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="65" dy="0">Data Platform Design</tspan>
+        </text>
+        
+            
+            <rect x="65" y="90" width="1100" height="205" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="80" y="115" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="80" dy="0">Data Strategy Layer</tspan>
+        </text>
+        
+            
+                <rect x="80" y="130" width="140" height="120" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="150.0" y="180.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="150.0" dy="0">Domain-Driven</tspan><tspan x="150.0" dy="15.0">Business Agility</tspan><tspan x="150.0" dy="15.0">&amp; Time-to-Market</tspan>
+        </text>
+        
+                
+                <rect x="235" y="130" width="140" height="120" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="305.0" y="172.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="305.0" dy="0">Trustworthy,</tspan><tspan x="305.0" dy="15.0">Quality-Assured</tspan><tspan x="305.0" dy="15.0">Business</tspan><tspan x="305.0" dy="15.0">Decision Making</tspan>
+        </text>
+        
+                
+                <rect x="390" y="130" width="140" height="135" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="460.0" y="172.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="460.0" dy="0">Continuous</tspan><tspan x="460.0" dy="15.0">Regulatory</tspan><tspan x="460.0" dy="15.0">Compliance,</tspan><tspan x="460.0" dy="15.0">Privacy &amp;</tspan><tspan x="460.0" dy="15.0">Sovereignty</tspan>
+        </text>
+        
+                
+                <rect x="545" y="130" width="140" height="135" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="615.0" y="180.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="615.0" dy="0">AI-Driven Advanced</tspan><tspan x="615.0" dy="15.0">Automation</tspan><tspan x="615.0" dy="15.0">&amp; Operations</tspan><tspan x="615.0" dy="15.0">Intelligence</tspan>
+        </text>
+        
+                
+                <rect x="700" y="130" width="140" height="150" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="770.0" y="195.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="770.0" dy="0">Business Value</tspan><tspan x="770.0" dy="15.0">Realization, OKR</tspan><tspan x="770.0" dy="15.0">&amp; ROI Alignment</tspan>
+        </text>
+        
+                
+            
+            <rect x="65" y="310" width="1100" height="1100" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="80" y="335" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="80" dy="0">Decentralized Technical Core Flow Layer</tspan>
+        </text>
+        
+            
+            <rect x="80" y="350" width="170" height="1045" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="95" y="375" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="95" dy="0">Edge &amp;</tspan><tspan x="95" dy="15.0">Connectivity</tspan>
+        </text>
+        
+            
+                <rect x="95" y="405" width="140" height="90" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="165.0" y="447.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="165.0" dy="0">Edge Data</tspan><tspan x="165.0" dy="15.0">Processing</tspan>
+        </text>
+        
+                
+                <rect x="95" y="510" width="140" height="105" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="165.0" y="560.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="165.0" dy="0">Gateways &amp; Hybrid</tspan><tspan x="165.0" dy="15.0">Connectivity</tspan>
+        </text>
+        
+                
+            
+            <rect x="265" y="350" width="170" height="1045" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="280" y="375" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="280" dy="0">Ingestion</tspan><tspan x="280" dy="15.0">&amp; Streams</tspan>
+        </text>
+        
+            
+                <rect x="280" y="405" width="140" height="120" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="350.0" y="462.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="350.0" dy="0">Data Ingestion</tspan><tspan x="350.0" dy="15.0">(Batch &amp; API)</tspan>
+        </text>
+        
+                
+                <rect x="280" y="540" width="140" height="120" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="350.0" y="590.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="350.0" dy="0">Stream Analytics</tspan><tspan x="350.0" dy="15.0">&amp; Event-Driven</tspan><tspan x="350.0" dy="15.0">Integration</tspan>
+        </text>
+        
+                
+            
+            <rect x="450" y="350" width="170" height="1045" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="465" y="375" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="465" dy="0">Storage &amp;</tspan><tspan x="465" dy="15.0">Engineering</tspan>
+        </text>
+        
+            
+                <rect x="465" y="405" width="140" height="105" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="535.0" y="455.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="535.0" dy="0">Object /</tspan><tspan x="535.0" dy="15.0">Lakehouse Storage</tspan>
+        </text>
+        
+                
+                <rect x="465" y="525" width="140" height="75" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="535.0" y="567.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="535.0" dy="0">Data Warehousing</tspan>
+        </text>
+        
+                
+                <rect x="465" y="615" width="140" height="90" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="535.0" y="657.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="535.0" dy="0">ETL/ELT Data</tspan><tspan x="535.0" dy="15.0">Processing</tspan>
+        </text>
+        
+                
+                <rect x="465" y="720" width="140" height="105" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="535.0" y="770.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="535.0" dy="0">Data &amp; Pipeline</tspan><tspan x="535.0" dy="15.0">Migration</tspan>
+        </text>
+        
+                
+                <rect x="465" y="840" width="140" height="120" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="535.0" y="890.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="535.0" dy="0">Agentic Data</tspan><tspan x="535.0" dy="15.0">Engineering</tspan><tspan x="535.0" dy="15.0">&amp; Copilots</tspan>
+        </text>
+        
+                
+                <rect x="465" y="975" width="140" height="90" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="535.0" y="1017.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="535.0" dy="0">Self-Service</tspan><tspan x="535.0" dy="15.0">Data Preparation</tspan>
+        </text>
+        
+                
+            
+            <rect x="635" y="350" width="180" height="1045" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="650" y="375" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="650" dy="0">AI &amp;</tspan><tspan x="650" dy="15.0">MLOps/DataOps</tspan>
+        </text>
+        
+            
+                <rect x="650" y="405" width="140" height="150" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="720.0" y="470.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="720.0" dy="0">ML / AI Workspace</tspan><tspan x="720.0" dy="15.0">&amp; Operations</tspan><tspan x="720.0" dy="15.0">(MLOps)</tspan>
+        </text>
+        
+                
+                <rect x="650" y="570" width="140" height="120" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="720.0" y="627.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="720.0" dy="0">Generative AI &amp;</tspan><tspan x="720.0" dy="15.0">Advanced Services</tspan>
+        </text>
+        
+                
+                <rect x="650" y="705" width="140" height="105" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="720.0" y="755.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="720.0" dy="0">Data Orchestration</tspan><tspan x="720.0" dy="15.0">&amp; Workflows</tspan>
+        </text>
+        
+                
+                <rect x="650" y="825" width="140" height="120" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="720.0" y="875.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="720.0" dy="0">CI/CD &amp;</tspan><tspan x="720.0" dy="15.0">Infrastructure</tspan><tspan x="720.0" dy="15.0">as Code</tspan>
+        </text>
+        
+                
+            
+            <rect x="830" y="350" width="170" height="1045" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="845" y="375" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="845" dy="0">Consumption</tspan><tspan x="845" dy="15.0">&amp; Value</tspan>
+        </text>
+        
+            
+                <rect x="845" y="405" width="140" height="105" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="915.0" y="447.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="915.0" dy="0">Business</tspan><tspan x="915.0" dy="15.0">Intelligence</tspan><tspan x="915.0" dy="15.0">&amp; Reporting</tspan>
+        </text>
+        
+                
+                <rect x="845" y="525" width="140" height="135" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="915.0" y="582.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="915.0" dy="0">Unified Semantic</tspan><tspan x="915.0" dy="15.0">Layer / Data</tspan><tspan x="915.0" dy="15.0">Virtualization</tspan>
+        </text>
+        
+                
+                <rect x="845" y="675" width="140" height="105" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="915.0" y="725.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="915.0" dy="0">Data Sharing &amp;</tspan><tspan x="915.0" dy="15.0">Interoperability</tspan>
+        </text>
+        
+                
+                <rect x="845" y="795" width="140" height="120" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="915.0" y="852.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="915.0" dy="0">API Management</tspan><tspan x="915.0" dy="15.0">&amp; Data Delivery</tspan>
+        </text>
+        
+                
+                <rect x="845" y="930" width="140" height="90" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="915.0" y="972.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="915.0" dy="0">Data Product</tspan><tspan x="915.0" dy="15.0">Management</tspan>
+        </text>
+        
+                
+                <rect x="845" y="1035" width="140" height="135" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="915.0" y="1092.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="915.0" dy="0">Value Tracking &amp;</tspan><tspan x="915.0" dy="15.0">ROI Measurement</tspan><tspan x="915.0" dy="15.0">(OKRs)</tspan>
+        </text>
+        
+                
+                <rect x="845" y="1185" width="140" height="90" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="915.0" y="1227.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="915.0" dy="0">Data Demand</tspan><tspan x="915.0" dy="15.0">Management</tspan>
+        </text>
+        
+                
+                <rect x="845" y="1290" width="140" height="90" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="915.0" y="1332.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="915.0" dy="0">Data Marketplace</tspan><tspan x="915.0" dy="15.0">Management</tspan>
+        </text>
+        
+                
+            
+            
+            <rect x="65" y="1425" width="1100" height="175" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="80" y="1450" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="80" dy="0">Computational Governance &amp; Platform Operations Layer</tspan>
+        </text>
+        
+            
+                <rect x="80" y="1465" width="140" height="75" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="150.0" y="1507.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="150.0" dy="0">Data Observability</tspan>
+        </text>
+        
+                
+                <rect x="235" y="1465" width="140" height="75" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="305.0" y="1500.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="305.0" dy="0">Automated</tspan><tspan x="305.0" dy="15.0">Guardrails</tspan>
+        </text>
+        
+                
+                <rect x="390" y="1465" width="140" height="120" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="460.0" y="1515.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="460.0" dy="0">Metadata</tspan><tspan x="460.0" dy="15.0">Management &amp;</tspan><tspan x="460.0" dy="15.0">Data Cataloging</tspan>
+        </text>
+        
+                
+                <rect x="545" y="1465" width="140" height="120" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="615.0" y="1522.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="615.0" dy="0">Platform, FinOps</tspan><tspan x="615.0" dy="15.0">&amp; Cost Management</tspan>
+        </text>
+        
+                
+                <rect x="700" y="1465" width="140" height="120" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="770.0" y="1522.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="770.0" dy="0">Workspace &amp; Data</tspan><tspan x="770.0" dy="15.0">Design Management</tspan>
+        </text>
+        
+                
+                <rect x="855" y="1465" width="140" height="105" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="925.0" y="1515.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="925.0" dy="0">Access Governance</tspan><tspan x="925.0" dy="15.0">&amp; Authorization</tspan>
+        </text>
+        
+                
+                <rect x="1010" y="1465" width="140" height="105" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="1080.0" y="1515.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="1080.0" dy="0">Data Security</tspan><tspan x="1080.0" dy="15.0">&amp; Privacy</tspan>
+        </text>
+        
+                
+            
+                <rect x="65" y="1615" width="140" height="105" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="135.0" y="1657.5" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="135.0" dy="0">Decentralized</tspan><tspan x="135.0" dy="15.0">Technical</tspan><tspan x="135.0" dy="15.0">Source Layer</tspan>
+        </text>
+        
+                
+            
+            
+                    <path d="M 165.0 405 V 327.5 H 150.0 V 250" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 165.0 510 V 387.5 H 460.0 V 265" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 350.0 405 V 327.5 H 150.0 V 250" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 350.0 540 V 395.0 H 150.0 V 250" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 535.0 405 V 327.5 H 305.0 V 250" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 535.0 525 V 387.5 H 305.0 V 250" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 535.0 615 V 432.5 H 305.0 V 250" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 535.0 720 V 485.0 H 150.0 V 250" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 535.0 840 V 545.0 H 150.0 V 250" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 535.0 840 V 552.5 H 615.0 V 265" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 535.0 975 V 612.5 H 150.0 V 250" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 720.0 405 V 335.0 H 615.0 V 265" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 720.0 570 V 417.5 H 615.0 V 265" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 650 757.5 H 435.0 V 190.0 H 220" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 720.0 825 V 537.5 H 150.0 V 250" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 845 457.5 H 532.5 V 190.0 H 220" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 845 592.5 H 532.5 V 190.0 H 220" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 845 727.5 H 532.5 V 190.0 H 220" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 845 855.0 H 532.5 V 190.0 H 220" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 915.0 930 V 605.0 H 770.0 V 280" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 915.0 1035 V 657.5 H 770.0 V 280" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 915.0 1185 V 732.5 H 770.0 V 280" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 915.0 1290 V 770.0 H 150.0 V 250" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 915.0 1290 V 785.0 H 770.0 V 280" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 150.0 1465 V 857.5 H 305.0 V 250" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 305.0 1465 V 865.0 H 460.0 V 265" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 305.0 1465 V 857.5 H 305.0 V 250" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 460.0 1465 V 857.5 H 150.0 V 250" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 460.0 1465 V 857.5 H 305.0 V 250" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 615.0 1465 V 865.0 H 460.0 V 265" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 770.0 1465 V 857.5 H 150.0 V 250" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 925.0 1465 V 865.0 H 460.0 V 265" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 1080.0 1465 V 865.0 H 460.0 V 265" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+        </svg>

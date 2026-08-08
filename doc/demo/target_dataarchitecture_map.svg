@@ -1,0 +1,252 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="815" height="1000">
+            <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5"
+                        markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#70757A" />
+                </marker>
+            </defs>
+            
+            <rect x="50" y="50" width="715" height="900" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="65" y="75" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="65" dy="0">Data Platform Design</tspan>
+        </text>
+        
+            
+            <rect x="65" y="90" width="685" height="220" 
+                  fill="#fff3e0" stroke="#ff9800" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="80" y="115" 
+              font-family="sans-serif" font-size="16" fill="#e65100" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="80" dy="0">DECISION SUPPORT / UTILIZATION</tspan><tspan x="80" dy="15.0">(BUSINESS APPLICATIONS &amp; CONSUMERS)</tspan>
+        </text>
+        
+            
+                <rect x="80" y="205" width="140" height="90" 
+                      fill="#ffe0b2" stroke="#ff9800" stroke-width="2" rx="6" />
+                
+        <text x="150.0" y="247.5" 
+              font-family="sans-serif" font-size="14" fill="#e65100" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="150.0" dy="0">Finance Reporting</tspan><tspan x="150.0" dy="15.0">Dashboard</tspan>
+        </text>
+        
+                
+            
+            <rect x="65" y="325" width="685" height="475" 
+                  fill="#e3f2fd" stroke="#2196f3" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="80" y="350" 
+              font-family="sans-serif" font-size="16" fill="#0d47a1" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="80" dy="0">CORE DATA PIPELINE (INTEGRATION</tspan><tspan x="80" dy="15.0">FLOWS, DATA WAREHOUSING &amp; COMPUTE)</tspan>
+        </text>
+        
+            
+            <rect x="80" y="380" width="120" height="405" 
+                  fill="#f5f5f5" stroke="#9e9e9e" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="95" y="405" 
+              font-family="sans-serif" font-size="16" fill="#212121" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="95" dy="0">DATA</tspan><tspan x="95" dy="15.0">SOURCES</tspan>
+        </text>
+        
+            
+                <svg x="106.25" y="435" width="60" height="60" viewBox="0 0 512 512">
+  <!-- Generator: Adobe Illustrator 29.0.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 192)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: #4285f4;
+      }
+
+      .st2 {
+        fill: #9aa0a6;
+      }
+    </style>
+  </defs>
+  <g id="bounding_box">
+    <rect class="st0" width="512" height="512"/>
+  </g>
+  <g id="art">
+    <path class="st1" d="M256,490c-44.2,0-85.9-11.3-117.6-31.8-33.8-21.9-52.4-51.7-52.4-84v-118.2h32v118.2c0,21,13.4,41.3,37.8,57.1,26.5,17.2,62.1,26.7,100.2,26.7s73.7-9.5,100.2-26.7c24.4-15.8,37.8-36.1,37.8-57.1h32c0,32.3-18.6,62.1-52.4,84-31.6,20.5-73.4,31.8-117.6,31.8Z"/>
+    <path class="st2" d="M256,381c-44.2,0-85.9-11.3-117.6-31.8-33.8-21.9-52.4-51.7-52.4-84v-127.3h32v127.3c0,21,13.4,41.3,37.8,57.1,26.5,17.2,62.1,26.7,100.2,26.7s73.7-9.5,100.2-26.7c24.4-15.8,37.8-36.1,37.8-57.1h32c0,32.3-18.6,62.1-52.4,84-31.6,20.5-73.4,31.8-117.6,31.8Z"/>
+    <path class="st2" d="M256,490v-32c38.1,0,73.7-9.5,100.2-26.7,24.4-15.8,37.8-36.1,37.8-57.2v-118.1h32v118.1c0,32.3-18.6,62.1-52.4,84.1-31.6,20.5-73.4,31.8-117.6,31.8h0Z"/>
+    <path class="st1" d="M256,381v-32c38.1,0,73.7-9.5,100.2-26.7,24.4-15.8,37.8-36.1,37.8-57.2v-127.2h32v127.2c0,32.3-18.6,62.1-52.4,84.1-31.6,20.5-73.4,31.8-117.6,31.8h0Z"/>
+    <path class="st1" d="M256,253.6c-44.2,0-85.9-11.3-117.6-31.8-33.8-21.9-52.4-51.7-52.4-84s18.6-62.1,52.4-84c31.6-20.5,73.4-31.8,117.6-31.8s86,11.3,117.6,31.8c33.8,21.9,52.4,51.7,52.4,84s-18.6,62.1-52.4,84c-31.6,20.5-73.4,31.8-117.6,31.8ZM256,54c-38.1,0-73.7,9.5-100.2,26.7-24.4,15.8-37.8,36.1-37.8,57.1s13.4,41.3,37.8,57.1c26.5,17.2,62.1,26.7,100.2,26.7s73.7-9.5,100.2-26.7c24.4-15.8,37.8-36.1,37.8-57.1s-13.4-41.3-37.8-57.1c-26.5-17.2-62.1-26.7-100.2-26.7Z"/>
+    <path class="st2" d="M256,253.8v-32c38.1,0,73.7-9.5,100.2-26.7,24.4-15.8,37.8-36.2,37.8-57.2s-13.4-41.4-37.8-57.2c-26.5-17.2-62.1-26.7-100.2-26.7v-32c44.2,0,86,11.3,117.6,31.8,33.8,21.9,52.4,51.8,52.4,84.1s-18.6,62.1-52.4,84.1c-31.6,20.5-73.4,31.8-117.6,31.8h0Z"/>
+  </g>
+</svg>
+                
+        <text x="136.25" y="510" 
+              font-family="sans-serif" font-size="12" fill="#4a148c" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="136.25" dy="0">Production</tspan><tspan x="136.25" dy="15.0">PostgreSQL</tspan><tspan x="136.25" dy="15.0">Transaction</tspan><tspan x="136.25" dy="15.0">Logs</tspan>
+        </text>
+        
+                
+                
+            
+            <rect x="215" y="380" width="200" height="405" 
+                  fill="#f5f5f5" stroke="#9e9e9e" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="230" y="405" 
+              font-family="sans-serif" font-size="16" fill="#212121" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="230" dy="0">DATA PROCESSING</tspan>
+        </text>
+        
+            
+            <rect x="230" y="420" width="170" height="220" 
+                  fill="#ffcdd2" stroke="#d32f2f" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="245" y="445" 
+              font-family="sans-serif" font-size="16" fill="#b71c1c" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="245" dy="0">Databricks</tspan><tspan x="245" dy="15.0">Shared</tspan><tspan x="245" dy="15.0">Serverless</tspan><tspan x="245" dy="15.0">Pool</tspan>
+        </text>
+        
+            
+                <rect x="245" y="505" width="140" height="120" 
+                      fill="#ffcdd2" stroke="#d32f2f" stroke-width="2" rx="6" />
+                
+        <text x="315.0" y="555.0" 
+              font-family="sans-serif" font-size="14" fill="#b71c1c" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="315.0" dy="0">Sales</tspan><tspan x="315.0" dy="15.0">Transaction Live</tspan><tspan x="315.0" dy="15.0">Delta Pipeline</tspan>
+        </text>
+        
+                
+            
+            
+            <rect x="430" y="380" width="120" height="405" 
+                  fill="#f5f5f5" stroke="#9e9e9e" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="445" y="405" 
+              font-family="sans-serif" font-size="16" fill="#212121" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="445" dy="0">DATA</tspan><tspan x="445" dy="15.0">STORAGE</tspan>
+        </text>
+        
+            
+                <svg x="455.0" y="435" width="60" height="60" viewBox="0 0 512 512">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <g id="bounding_box">
+    <rect width="512" height="512" fill="none"/>
+  </g>
+  <g id="art">
+    <path d="M410,272H102c-8.837,0-16-7.163-16-16V53c0-17.121,13.879-31,31-31h278c17.121,0,31,13.879,31,31v203c0,8.837-7.163,16-16,16ZM118,240h276V54H118v186Z" fill="#9aa0a6"/>
+    <path d="M395,490H117c-17.121,0-31-13.879-31-31v-203c0-8.837,7.163-16,16-16h308c8.837,0,16,7.163,16,16v203c0,17.121-13.879,31-31,31ZM118,458h276v-186H118v186Z" fill="#9aa0a6"/>
+    <path d="M426,240H86v32h154v74c0,8.837,7.163,16,16,16s16-7.163,16-16v-74h154v-32Z" fill="#4285f4"/>
+    <path d="M426,53c0-17.121-13.879-31-31-31H117c-17.121,0-31,13.879-31,31v1h154v74c0,8.837,7.163,16,16,16s16-7.163,16-16V54h154v-1Z" fill="#4285f4"/>
+  </g>
+</svg>
+                
+        <text x="485.0" y="510" 
+              font-family="sans-serif" font-size="12" fill="#333333" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="485.0" dy="0">Delta</tspan><tspan x="485.0" dy="15.0">Lakehouse</tspan><tspan x="485.0" dy="15.0">- Bronze</tspan><tspan x="485.0" dy="15.0">Ingestion</tspan><tspan x="485.0" dy="15.0">Layer</tspan>
+        </text>
+        
+                
+                
+                <svg x="455.0" y="610" width="60" height="60" viewBox="0 0 512 512">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <g id="bounding_box">
+    <rect width="512" height="512" fill="none"/>
+  </g>
+  <g id="art">
+    <path d="M410,272H102c-8.837,0-16-7.163-16-16V53c0-17.121,13.879-31,31-31h278c17.121,0,31,13.879,31,31v203c0,8.837-7.163,16-16,16ZM118,240h276V54H118v186Z" fill="#9aa0a6"/>
+    <path d="M395,490H117c-17.121,0-31-13.879-31-31v-203c0-8.837,7.163-16,16-16h308c8.837,0,16,7.163,16,16v203c0,17.121-13.879,31-31,31ZM118,458h276v-186H118v186Z" fill="#9aa0a6"/>
+    <path d="M426,240H86v32h154v74c0,8.837,7.163,16,16,16s16-7.163,16-16v-74h154v-32Z" fill="#4285f4"/>
+    <path d="M426,53c0-17.121-13.879-31-31-31H117c-17.121,0-31,13.879-31,31v1h154v74c0,8.837,7.163,16,16,16s16-7.163,16-16V54h154v-1Z" fill="#4285f4"/>
+  </g>
+</svg>
+                
+        <text x="485.0" y="685" 
+              font-family="sans-serif" font-size="12" fill="#333333" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="485.0" dy="0">Delta</tspan><tspan x="485.0" dy="15.0">Lakehouse</tspan><tspan x="485.0" dy="15.0">- Silver</tspan><tspan x="485.0" dy="15.0">Cleansed</tspan><tspan x="485.0" dy="15.0">Layer</tspan>
+        </text>
+        
+                
+                
+            
+            <rect x="565" y="380" width="170" height="405" 
+                  fill="#f5f5f5" stroke="#9e9e9e" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="580" y="405" 
+              font-family="sans-serif" font-size="16" fill="#212121" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="580" dy="0">DATA TARGETS</tspan>
+        </text>
+        
+            
+                <rect x="580" y="420" width="140" height="120" 
+                      fill="#f8f9fa" stroke="#cccccc" stroke-width="2" rx="6" />
+                
+        <text x="650.0" y="470.0" 
+              font-family="sans-serif" font-size="14" fill="#333333" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="650.0" dy="0">Databricks</tspan><tspan x="650.0" dy="15.0">Serverless Sales</tspan><tspan x="650.0" dy="15.0">SQL Warehouse</tspan>
+        </text>
+        
+                
+            
+            
+                <rect x="65" y="815" width="140" height="120" 
+                      fill="#eceff1" stroke="#607d8b" stroke-width="2" rx="6" />
+                
+        <text x="135.0" y="857.5" 
+              font-family="sans-serif" font-size="14" fill="#37474f" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="135.0" dy="0">COMPUTATIONAL</tspan><tspan x="135.0" dy="15.0">GOVERNANCE</tspan><tspan x="135.0" dy="15.0">&amp; PLATFORM</tspan><tspan x="135.0" dy="15.0">OPERATIONS</tspan>
+        </text>
+        
+                
+            
+            
+                    <path d="M 166.25 465.0 H 310.625 V 465.0 H 455.0" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 485.0 495 V 552.5 H 485.0 V 610" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 485.0 610 V 575.0 H 650.0 V 540" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 580 480.0 H 400.0 V 250.0 H 220" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 315.0 640 V 572.5 H 315.0 V 505" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 385 565.0 H 420.0 V 465.0 H 455.0" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 385 565.0 H 420.0 V 640.0 H 455.0" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+        </svg>

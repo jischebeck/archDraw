@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="610" height="545">
+            <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5"
+                        markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#70757A" />
+                </marker>
+            </defs>
+            
+            <rect x="50" y="50" width="510" height="445" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="65" y="75" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="65" dy="0">Data Platform Design</tspan>
+        </text>
+        
+            
+            <rect x="65" y="90" width="480" height="115" 
+                  fill="#fff3e0" stroke="#ff9800" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="80" y="115" 
+              font-family="sans-serif" font-size="16" fill="#e65100" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="80" dy="0">STRATEGY &amp; PLATFORM LAYERS</tspan>
+        </text>
+        
+            
+                <rect x="80" y="130" width="140" height="60" 
+                      fill="#f8f9fa" stroke="#cccccc" stroke-width="2" rx="6" />
+                
+        <text x="150.0" y="165.0" 
+              font-family="sans-serif" font-size="14" fill="#333333" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="150.0" dy="0">#CapabilityGroup</tspan>
+        </text>
+        
+                
+                <rect x="235" y="130" width="140" height="60" 
+                      fill="#f8f9fa" stroke="#cccccc" stroke-width="2" rx="6" />
+                
+        <text x="305.0" y="165.0" 
+              font-family="sans-serif" font-size="14" fill="#333333" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="305.0" dy="0">#Capability</tspan>
+        </text>
+        
+                
+                <rect x="390" y="130" width="140" height="60" 
+                      fill="#f8f9fa" stroke="#cccccc" stroke-width="2" rx="6" />
+                
+        <text x="460.0" y="165.0" 
+              font-family="sans-serif" font-size="14" fill="#333333" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="460.0" dy="0">#PlatformComponent</tspan>
+        </text>
+        
+                
+            
+            <rect x="65" y="220" width="480" height="115" 
+                  fill="#e3f2fd" stroke="#2196f3" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="80" y="245" 
+              font-family="sans-serif" font-size="16" fill="#0d47a1" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="80" dy="0">BUSINESS &amp; LOGICAL REALIZATION</tspan>
+        </text>
+        
+            
+                <rect x="80" y="260" width="140" height="60" 
+                      fill="#f8f9fa" stroke="#cccccc" stroke-width="2" rx="6" />
+                
+        <text x="150.0" y="295.0" 
+              font-family="sans-serif" font-size="14" fill="#333333" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="150.0" dy="0">#Domain</tspan>
+        </text>
+        
+                
+                <rect x="235" y="260" width="140" height="60" 
+                      fill="#f8f9fa" stroke="#cccccc" stroke-width="2" rx="6" />
+                
+        <text x="305.0" y="295.0" 
+              font-family="sans-serif" font-size="14" fill="#333333" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="305.0" dy="0">#DataObject</tspan>
+        </text>
+        
+                
+                <rect x="390" y="260" width="140" height="60" 
+                      fill="#f8f9fa" stroke="#cccccc" stroke-width="2" rx="6" />
+                
+        <text x="460.0" y="295.0" 
+              font-family="sans-serif" font-size="14" fill="#333333" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="460.0" dy="0">#DataPipeline</tspan>
+        </text>
+        
+                
+            
+            <rect x="65" y="350" width="480" height="130" 
+                  fill="#eceff1" stroke="#607d8b" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="80" y="375" 
+              font-family="sans-serif" font-size="16" fill="#37474f" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="80" dy="0">GOVERNANCE &amp; PLATFORM OPERATIONS</tspan>
+        </text>
+        
+            
+                <rect x="80" y="405" width="140" height="60" 
+                      fill="#f8f9fa" stroke="#cccccc" stroke-width="2" rx="6" />
+                
+        <text x="150.0" y="440.0" 
+              font-family="sans-serif" font-size="14" fill="#333333" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="150.0" dy="0">#AccessPolicy</tspan>
+        </text>
+        
+                
+                <rect x="235" y="405" width="140" height="60" 
+                      fill="#f8f9fa" stroke="#cccccc" stroke-width="2" rx="6" />
+                
+        <text x="305.0" y="440.0" 
+              font-family="sans-serif" font-size="14" fill="#333333" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="305.0" dy="0">#Expectation</tspan>
+        </text>
+        
+                
+            
+            
+            
+                    <path d="M 235 160.0 H 227.5 V 160.0 H 220" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 390 160.0 H 382.5 V 160.0 H 375" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 235 290.0 H 227.5 V 290.0 H 220" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 390 290.0 H 382.5 V 290.0 H 375" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 220 435.0 H 227.5 V 290.0 H 235" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+
+                    <path d="M 305.0 405 V 362.5 H 305.0 V 320" fill="none"
+                          stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
+                    
+                    
+        </svg>
