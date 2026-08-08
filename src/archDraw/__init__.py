@@ -1,5 +1,5 @@
 # Clean exposure of the library's primary components
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 from .core.elements import Node, Container
 from .layout.engine import LayoutEngine
