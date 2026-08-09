@@ -2,7 +2,7 @@
 
 A dual-interface architecture diagramming tool for generating clean, auto-laid-out architecture diagrams from a declarative DSL or a Python API.
 
-![Version](https://img.shields.io/badge/version-0.2.0-blue)
+![Version](https://img.shields.io/badge/version-0.3.1-blue)
 ![Python](https://img.shields.io/badge/python-%3E%3D3.8-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 

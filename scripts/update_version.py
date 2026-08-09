@@ -74,9 +74,26 @@ def main():
         f.write(updated_changelog)
     print(f"Updated {changelog_path} with entry for {new_version}")
 
+    # 3.5 Update README.md version pill/badge
+    readme_path = os.path.join(project_root, "README.md")
+    if os.path.exists(readme_path):
+        with open(readme_path, "r") as f:
+            readme_content = f.read()
+        updated_readme = re.sub(
+            r'https://img.shields.io/badge/version-.*?-blue',
+            f'https://img.shields.io/badge/version-{new_version}-blue',
+            readme_content
+        )
+        with open(readme_path, "w") as f:
+            f.write(updated_readme)
+        print(f"Updated {readme_path} version badge to {new_version}")
+
     # 4. Git operations
     try:
-        subprocess.run(["git", "add", pyproject_path, init_path, changelog_path], check=True)
+        git_add_files = [pyproject_path, init_path, changelog_path]
+        if os.path.exists(readme_path):
+            git_add_files.append(readme_path)
+        subprocess.run(["git", "add"] + git_add_files, check=True)
         # Check if uv.lock exists and update it too
         uv_lock_path = os.path.join(project_root, "uv.lock")
         if os.path.exists(uv_lock_path):
