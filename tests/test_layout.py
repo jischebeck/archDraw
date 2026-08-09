@@ -316,5 +316,24 @@ def test_grid_routing(tmp_path):
     assert "<path" in svg_content
     assert " L " in svg_content
 
+def test_validate_and_enclose():
+    with Container("Parent") as parent:
+        with Container("Child") as child:
+            Node("Node A")
+            
+    renderer = SVGRenderer()
+    LayoutEngine.calculate_bounds(parent, renderer)
+    LayoutEngine.apply_offset(parent, dx=10, dy=10)
+    
+    # Manually force child outside of parent boundaries
+    child.x = parent.x + parent.width + 10
+    
+    # Run validation loop
+    LayoutEngine.validate_and_enclose(parent)
+    
+    # Parent must be expanded to enclose child
+    assert parent.x + parent.width >= child.x + child.width + 15
+
+
 
 

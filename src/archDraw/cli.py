@@ -44,8 +44,9 @@ def main():
     # Layout bounds
     print("Calculating layout dimensions...")
     renderer = SVGRenderer(routing=routing_algo)
-    LayoutEngine.calculate_bounds(root, renderer)
+    LayoutEngine.calculate_bounds(root, renderer, connections=connections)
     LayoutEngine.apply_offset(root, dx=args.padding, dy=args.padding)
+    LayoutEngine.validate_and_enclose(root)
 
     # Determine output format and path
     output_path = args.output

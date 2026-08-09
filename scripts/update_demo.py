@@ -118,8 +118,9 @@ TEST_CASES = {
 def render_dsl_to_svg(dsl_content: str, output_svg_path: str):
     root, connections = parse_dsl(dsl_content)
     renderer = SVGRenderer()
-    LayoutEngine.calculate_bounds(root, renderer)
+    LayoutEngine.calculate_bounds(root, renderer, connections=connections)
     LayoutEngine.apply_offset(root, dx=50, dy=50)
+    LayoutEngine.validate_and_enclose(root)
     renderer.export(root, output_svg_path, connections)
     print(f"Rendered SVG to {output_svg_path}")
 

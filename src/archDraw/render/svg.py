@@ -196,8 +196,16 @@ class SVGRenderer:
         find_elements(root)
         
         connection_svgs = []
+        routed_points = set()
         if connections:
-            for conn in connections:
+            def get_vertical_dist(c_val):
+                s_el = element_map.get(c_val.source)
+                t_el = element_map.get(c_val.target)
+                if s_el and t_el:
+                    return abs((s_el.y + s_el.height / 2) - (t_el.y + t_el.height / 2))
+                return 999999
+            sorted_connections = sorted(connections, key=get_vertical_dist)
+            for conn in sorted_connections:
                 src = element_map.get(conn.source)
                 tgt = element_map.get(conn.target)
                 if src and tgt:
@@ -205,7 +213,9 @@ class SVGRenderer:
                     tgt_pts = self.get_connection_endpoints(tgt)
                     if self.routing == "grid":
                         all_elements = list(set(element_map.values()))
-                        route = route_grid(src, tgt, src_pts, tgt_pts, all_elements)
+                        route = route_grid(src, tgt, src_pts, tgt_pts, all_elements, routed_points)
+                        if "grid_path" in route and route["grid_path"]:
+                            routed_points.update(route["grid_path"])
                     else:
                         route = route_manhattan(src, tgt, src_pts, tgt_pts)
                     path_d = route["path_d"]

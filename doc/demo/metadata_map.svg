@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="610" height="545">
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="580">
             <defs>
                 <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5"
                         markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -6,7 +6,7 @@
                 </marker>
             </defs>
             
-            <rect x="50" y="50" width="510" height="445" 
+            <rect x="50" y="50" width="580" height="480" 
                   fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
             
         <text x="65" y="75" 
@@ -16,7 +16,7 @@
         </text>
         
             
-            <rect x="65" y="90" width="480" height="115" 
+            <rect x="65" y="90" width="550" height="115" 
                   fill="#fff3e0" stroke="#ff9800" stroke-width="2" stroke-dasharray="6,4" rx="8" />
             
         <text x="80" y="115" 
@@ -57,7 +57,7 @@
         
                 
             
-            <rect x="65" y="220" width="480" height="115" 
+            <rect x="65" y="220" width="550" height="115" 
                   fill="#e3f2fd" stroke="#2196f3" stroke-width="2" stroke-dasharray="6,4" rx="8" />
             
         <text x="80" y="245" 
@@ -98,30 +98,30 @@
         
                 
             
-            <rect x="65" y="350" width="480" height="130" 
+            <rect x="65" y="385" width="550" height="130" 
                   fill="#eceff1" stroke="#607d8b" stroke-width="2" stroke-dasharray="6,4" rx="8" />
             
-        <text x="80" y="375" 
+        <text x="80" y="410" 
               font-family="sans-serif" font-size="16" fill="#37474f" 
               font-weight="bold" text-anchor="start">
             <tspan x="80" dy="0">GOVERNANCE &amp; PLATFORM OPERATIONS</tspan>
         </text>
         
             
-                <rect x="80" y="405" width="140" height="60" 
+                <rect x="80" y="425" width="140" height="60" 
                       fill="#f8f9fa" stroke="#cccccc" stroke-width="2" rx="6" />
                 
-        <text x="150.0" y="440.0" 
+        <text x="150.0" y="460.0" 
               font-family="sans-serif" font-size="14" fill="#333333" 
               font-weight="bold" text-anchor="middle">
             <tspan x="150.0" dy="0">#AccessPolicy</tspan>
         </text>
         
                 
-                <rect x="235" y="405" width="140" height="60" 
+                <rect x="235" y="425" width="140" height="60" 
                       fill="#f8f9fa" stroke="#cccccc" stroke-width="2" rx="6" />
                 
-        <text x="305.0" y="440.0" 
+        <text x="305.0" y="460.0" 
               font-family="sans-serif" font-size="14" fill="#333333" 
               font-weight="bold" text-anchor="middle">
             <tspan x="305.0" dy="0">#Expectation</tspan>
@@ -151,12 +151,12 @@
                     
                     
 
-                    <path d="M 220 435.0 L 305.0 320" fill="none"
+                    <path d="M 185.0 425 L 185.0 370 L 270.0 370 L 270.0 320" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
 
-                    <path d="M 305.0 405 L 305.0 390 L 310 390 L 310 320 L 305.0 340 L 305.0 320" fill="none"
+                    <path d="M 305.0 425 L 305.0 320" fill="none"
                           stroke="#70757A" stroke-width="2" marker-end="url(#arrow)"  />
                     
                     
