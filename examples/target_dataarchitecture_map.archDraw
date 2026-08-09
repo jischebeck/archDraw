@@ -1,0 +1,43 @@
+architecture "Data Platform Design" {
+    box "DECISION SUPPORT / UTILIZATION (BUSINESS APPLICATIONS & CONSUMERS)" as decision_support_bar [fillColor="#fff3e0", strokeColor="#ff9800", fontColor="#e65100"] {
+        layout: horizontal
+        direction: left-right
+        component "Finance Reporting Dashboard" as finance_reporting_app [fillColor="#ffe0b2", strokeColor="#ff9800", fontColor="#e65100"]
+    }
+    box "CORE DATA PIPELINE (INTEGRATION FLOWS, DATA WAREHOUSING & COMPUTE)" as core_pipeline_tier [fillColor="#e3f2fd", strokeColor="#2196f3", fontColor="#0d47a1"] {
+        layout: horizontal
+        direction: left-right
+        box "DATA SOURCES" as col1_sources [fillColor="#f5f5f5", strokeColor="#9e9e9e", fontColor="#212121"] {
+            layout: vertical
+            direction: top-down
+            database "Production PostgreSQL Transaction Logs" as postgres_source [fillColor="#e1bee7", strokeColor="#7b1fa2", fontColor="#4a148c"]
+        }
+        box "DATA PROCESSING" as col2_processing [fillColor="#f5f5f5", strokeColor="#9e9e9e", fontColor="#212121"] {
+            layout: vertical
+            direction: top-down
+            box "Databricks Shared Serverless Pool" as databricks_serverless [fillColor="#ffcdd2", strokeColor="#d32f2f", fontColor="#b71c1c"] {
+                layout: grid
+                service "Sales Transaction Live Delta Pipeline" as databricks_dlt_pipeline [fillColor="#ffcdd2", strokeColor="#d32f2f", fontColor="#b71c1c"]
+            }
+        }
+        box "DATA STORAGE" as col3_storage [fillColor="#f5f5f5", strokeColor="#9e9e9e", fontColor="#212121"] {
+            layout: vertical
+            direction: top-down
+            storage "Delta Lakehouse - Bronze Ingestion Layer" as lakehouse_bronze [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+            storage "Delta Lakehouse - Silver Cleansed Layer" as lakehouse_silver [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+        }
+        box "DATA TARGETS" as col4_cloud [fillColor="#f5f5f5", strokeColor="#9e9e9e", fontColor="#212121"] {
+            layout: vertical
+            direction: top-down
+            service "Databricks Serverless Sales SQL Warehouse" as sales_sql_warehouse [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+        }
+    }
+    tier "COMPUTATIONAL GOVERNANCE & PLATFORM OPERATIONS" as governance_bar [fillColor="#eceff1", strokeColor="#607d8b", fontColor="#37474f"]
+    postgres_source => lakehouse_bronze
+    lakehouse_bronze => lakehouse_silver
+    lakehouse_silver => sales_sql_warehouse
+    sales_sql_warehouse => finance_reporting_app
+    databricks_serverless => databricks_dlt_pipeline
+    databricks_dlt_pipeline => lakehouse_bronze
+    databricks_dlt_pipeline => lakehouse_silver
+}

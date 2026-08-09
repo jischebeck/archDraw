@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>archDraw Showcase & Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --border: #334155;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            margin: 0 0 1rem 0;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-example {
+            background-color: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .badge-test {
+            background-color: rgba(168, 85, 247, 0.15);
+            color: #c084fc;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 250px;
+            overflow: auto;
+            position: relative;
+        }
+
+        .card-body img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .fullscreen-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            background-color: rgba(15, 23, 42, 0.7);
+            border: 1px solid var(--border);
+            color: #ffffff;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 10;
+            user-select: none;
+        }
+
+        .fullscreen-btn:hover {
+            background-color: var(--accent);
+            color: var(--bg-primary);
+            transform: scale(1.05);
+        }
+
+        /* Modal Overlay CSS */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.95);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content pre {
+            background-color: #1e293b;
+            color: #f8fafc;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 0;
+            text-align: left;
+            white-space: pre-wrap;
+            overflow: auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 4px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: var(--text-secondary);
+            font-size: 2.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            user-select: none;
+        }
+
+        .close-modal:hover {
+            color: var(--text-primary);
+        }
+
+        .view-toggle {
+            display: flex;
+            background-color: var(--bg-primary);
+            border-radius: 6px;
+            padding: 2px;
+            border: 1px solid var(--border);
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .toggle-btn.active {
+            background-color: var(--accent);
+            color: var(--bg-primary);
+        }
+        
+        .toggle-btn:hover:not(.active) {
+            color: var(--text-primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            background-color: #0b0f19;
+        }
+    </style>
+    <script>
+        function setView(id, view) {
+            const card = document.getElementById('card_' + id);
+            const imgView = document.getElementById('image_' + id);
+            const srcView = document.getElementById('source_' + id);
+            const buttons = card.querySelectorAll('.toggle-btn');
+            
+            if (view === 'image') {
+                imgView.style.display = 'flex';
+                srcView.style.display = 'none';
+                buttons[0].classList.add('active');
+                buttons[1].classList.remove('active');
+            } else {
+                imgView.style.display = 'none';
+                srcView.style.display = 'flex';
+                buttons[0].classList.remove('active');
+                buttons[1].classList.add('active');
+            }
+        }
+
+        function openFullscreen(id) {
+            const card = document.getElementById('card_' + id);
+            const isImage = document.getElementById('image_' + id).style.display !== 'none';
+            const modal = document.getElementById('fullscreen-overlay');
+            const modalContent = modal.querySelector('.modal-content');
+            
+            // Clear previous modal content
+            modalContent.innerHTML = '';
+            
+            if (isImage) {
+                const img = document.getElementById('image_' + id).querySelector('img');
+                const newImg = img.cloneNode(true);
+                modalContent.style.backgroundColor = '#ffffff';
+                modalContent.appendChild(newImg);
+            } else {
+                const pre = document.getElementById('source_' + id).querySelector('pre');
+                const newPre = pre.cloneNode(true);
+                modalContent.style.backgroundColor = '#1e293b';
+                modalContent.appendChild(newPre);
+            }
+            
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Disable background scrolling
+        }
+
+        function closeFullscreen() {
+            const modal = document.getElementById('fullscreen-overlay');
+            modal.style.display = 'none';
+            document.body.style.overflow = ''; // Restore background scrolling
+        }
+
+        // Close on ESC key press
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeFullscreen();
+            }
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>archDraw Showcase & Demo</h1>
+    <p>A gallery of architectural diagrams automatically generated from DSL files and test cases using archDraw.</p>
+</header>
+
+<div class="container">
+    <div class="grid">
+
+        <div class="card" id="card_demo_capabilities_map_svg">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title">Capabilities Map (Example)</h3>
+                    <span class="badge badge-example">Example</span>
+                </div>
+                <div class="view-toggle">
+                    <button class="toggle-btn active" onclick="setView('demo_capabilities_map_svg', 'image')">Diagram</button>
+                    <button class="toggle-btn" onclick="setView('demo_capabilities_map_svg', 'source')">Source</button>
+                </div>
+            </div>
+            <div class="card-body image-view" id="image_demo_capabilities_map_svg" ondblclick="openFullscreen('demo_capabilities_map_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_capabilities_map_svg')" title="View Fullscreen">⛶</button>
+                <img src="demo/capabilities_map.svg" alt="Capabilities Map (Example)">
+            </div>
+            <div class="card-body source-view" id="source_demo_capabilities_map_svg" style="display: none; background-color: #1e293b; color: #f8fafc; text-align: left; justify-content: flex-start; align-items: stretch; min-height: 250px;" ondblclick="openFullscreen('demo_capabilities_map_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_capabilities_map_svg')" title="View Fullscreen" style="background-color: rgba(255, 255, 255, 0.15);">⛶</button>
+                <pre style="margin: 0; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; overflow: auto; width: 100%; white-space: pre-wrap; padding: 1rem;">architecture "Data Platform Design" {
+    box "Data Strategy Layer" as g_strategy_layer {
+        layout: horizontal
+        direction: left-right
+        leaf "Domain-Driven Business Agility &amp; Time-to-Market" as biz_domain_agility
+        leaf "Trustworthy, Quality-Assured Business Decision Making" as biz_trustworthy_data
+        leaf "Continuous Regulatory Compliance, Privacy &amp; Sovereignty" as biz_regulatory_compliance
+        leaf "AI-Driven Advanced Automation &amp; Operations Intelligence" as biz_intelligent_automation
+        leaf "Business Value Realization, OKR &amp; ROI Alignment" as biz_business_value_tracking
+    }
+    box "Decentralized Technical Core Flow Layer" as g_technical_flow_layer {
+        layout: horizontal
+        direction: left-right
+        box "Edge &amp; Connectivity" as g_edge_connectivity {
+            layout: vertical
+            direction: top-down
+            leaf "Edge Data Processing" as tech_edge_data_processing
+            leaf "Gateways &amp; Hybrid Connectivity" as tech_gateways_hybrid_connectivity
+        }
+        box "Ingestion &amp; Streams" as g_ingestion_streams {
+            layout: vertical
+            direction: top-down
+            leaf "Data Ingestion (Batch &amp; API)" as tech_data_ingestion
+            leaf "Stream Analytics &amp; Event-Driven Integration" as tech_stream_analytics
+        }
+        box "Storage &amp; Engineering" as g_storage_engineering {
+            layout: vertical
+            direction: top-down
+            leaf "Object / Lakehouse Storage" as tech_lakehouse_storage
+            leaf "Data Warehousing" as tech_data_warehousing
+            leaf "ETL/ELT Data Processing" as tech_etl_elt_processing
+            leaf "Data &amp; Pipeline Migration" as tech_data_pipeline_migration
+            leaf "Agentic Data Engineering &amp; Copilots" as tech_agentic_data_engineering
+            leaf "Self-Service Data Preparation" as tech_self_service_prep
+        }
+        box "AI &amp; MLOps/DataOps" as g_ai_orchestration {
+            layout: vertical
+            direction: top-down
+            leaf "ML / AI Workspace &amp; Operations (MLOps)" as tech_ml_ai_workspace_mlops
+            leaf "Generative AI &amp; Advanced Services" as tech_generative_ai_advanced
+            leaf "Data Orchestration &amp; Workflows" as tech_data_orchestration_workflows
+            leaf "CI/CD &amp; Infrastructure as Code" as tech_cicd_iac
+        }
+        box "Consumption &amp; Value" as g_consumption_value {
+            layout: vertical
+            direction: top-down
+            leaf "Business Intelligence &amp; Reporting" as tech_business_intelligence_reporting
+            leaf "Unified Semantic Layer / Data Virtualization" as tech_unified_semantic_layer
+            leaf "Data Sharing &amp; Interoperability" as tech_data_sharing_interoperability
+            leaf "API Management &amp; Data Delivery" as tech_api_management_delivery
+            leaf "Data Product Management" as tech_data_product_management
+            leaf "Value Tracking &amp; ROI Measurement (OKRs)" as tech_value_tracking_roi_okrs
+            leaf "Data Demand Management" as tech_data_demand_management
+            leaf "Data Marketplace Management" as tech_data_marketplace_management
+        }
+    }
+    box "Computational Governance &amp; Platform Operations Layer" as g_governance_ops_layer {
+        layout: horizontal
+        direction: left-right
+        leaf "Data Observability" as tech_data_observability
+        leaf "Automated Guardrails" as tech_automated_guardrails
+        leaf "Metadata Management &amp; Data Cataloging" as tech_metadata_management_cataloging
+        leaf "Platform, FinOps &amp; Cost Management" as tech_platform_finops_cost
+        leaf "Workspace &amp; Data Design Management" as tech_workspace_data_design
+        leaf "Access Governance &amp; Authorization" as tech_access_governance_authorization
+        leaf "Data Security &amp; Privacy" as tech_data_security_privacy
+    }
+    group "Decentralized Technical Source Layer" as g_technical_source_layer
+}
+</pre>
+            </div>
+        </div>
+
+        <div class="card" id="card_demo_metadata_map_svg">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title">Metadata Map (Example)</h3>
+                    <span class="badge badge-example">Example</span>
+                </div>
+                <div class="view-toggle">
+                    <button class="toggle-btn active" onclick="setView('demo_metadata_map_svg', 'image')">Diagram</button>
+                    <button class="toggle-btn" onclick="setView('demo_metadata_map_svg', 'source')">Source</button>
+                </div>
+            </div>
+            <div class="card-body image-view" id="image_demo_metadata_map_svg" ondblclick="openFullscreen('demo_metadata_map_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_metadata_map_svg')" title="View Fullscreen">⛶</button>
+                <img src="demo/metadata_map.svg" alt="Metadata Map (Example)">
+            </div>
+            <div class="card-body source-view" id="source_demo_metadata_map_svg" style="display: none; background-color: #1e293b; color: #f8fafc; text-align: left; justify-content: flex-start; align-items: stretch; min-height: 250px;" ondblclick="openFullscreen('demo_metadata_map_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_metadata_map_svg')" title="View Fullscreen" style="background-color: rgba(255, 255, 255, 0.15);">⛶</button>
+                <pre style="margin: 0; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; overflow: auto; width: 100%; white-space: pre-wrap; padding: 1rem;">architecture "Data Platform Design" {
+    box "STRATEGY &amp; PLATFORM LAYERS" as g_strategy_platform [fillColor="#fff3e0", strokeColor="#ff9800", fontColor="#e65100"] {
+        layout: horizontal
+        direction: left-right
+        component "#CapabilityGroup" as capabilitygroup [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+        component "#Capability" as capability [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+        component "#PlatformComponent" as platformcomponent [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+    }
+    box "BUSINESS &amp; LOGICAL REALIZATION" as g_business_realization [fillColor="#e3f2fd", strokeColor="#2196f3", fontColor="#0d47a1"] {
+        layout: horizontal
+        direction: left-right
+        component "#Domain" as domain [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+        component "#DataObject" as dataobject [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+        component "#DataPipeline" as datapipeline [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+    }
+    box "GOVERNANCE &amp; PLATFORM OPERATIONS" as g_governance_ops [fillColor="#eceff1", strokeColor="#607d8b", fontColor="#37474f"] {
+        layout: horizontal
+        direction: left-right
+        component "#AccessPolicy" as accesspolicy [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+        component "#Expectation" as expectation [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+    }
+    capability =&gt; capabilitygroup
+    platformcomponent =&gt; capability
+    dataobject =&gt; domain
+    datapipeline =&gt; dataobject
+    accesspolicy =&gt; dataobject
+    expectation =&gt; dataobject
+}
+</pre>
+            </div>
+        </div>
+
+        <div class="card" id="card_demo_pipeline_svg">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title">Pipeline (Example)</h3>
+                    <span class="badge badge-example">Example</span>
+                </div>
+                <div class="view-toggle">
+                    <button class="toggle-btn active" onclick="setView('demo_pipeline_svg', 'image')">Diagram</button>
+                    <button class="toggle-btn" onclick="setView('demo_pipeline_svg', 'source')">Source</button>
+                </div>
+            </div>
+            <div class="card-body image-view" id="image_demo_pipeline_svg" ondblclick="openFullscreen('demo_pipeline_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_pipeline_svg')" title="View Fullscreen">⛶</button>
+                <img src="demo/pipeline.svg" alt="Pipeline (Example)">
+            </div>
+            <div class="card-body source-view" id="source_demo_pipeline_svg" style="display: none; background-color: #1e293b; color: #f8fafc; text-align: left; justify-content: flex-start; align-items: stretch; min-height: 250px;" ondblclick="openFullscreen('demo_pipeline_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_pipeline_svg')" title="View Fullscreen" style="background-color: rgba(255, 255, 255, 0.15);">⛶</button>
+                <pre style="margin: 0; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; overflow: auto; width: 100%; white-space: pre-wrap; padding: 1rem;">architecture "Real-Time User Analytics Pipeline" {
+    direction: left-right
+
+    actor "Mobile User" as user
+
+    // VPC Boundary — solid blue border with a light blue tint
+    box "GCP Virtual Private Cloud (VPC)" as vpc [fill_color="#E3F2FD", border_color="#1565C0", border_style="solid"] {
+        layout: vertical
+        
+        // Load Balancing Layer
+        gcp::network::CloudLoadBalancing "Global HTTPs LB" as lb
+        
+        // Processing Layer
+        stack "Compute &amp; Ingestion" {
+            direction: left-right
+            
+            layer "API Gateway" [fill_color="#FFF8E1", border_color="#F9A825"] {
+                gcp::compute::CloudRun "Ingestion API" as api
+            }
+            
+            layer "Event Bus" [fill_color="#F3E5F5", border_color="#8E24AA"] {
+                gcp::analytics::PubSub "Events Topic" as pubsub
+            }
+        }
+        
+        // Analytics Layer
+        stack "Data Processing &amp; Storage" [border_color="#2E7D32", border_style="solid"] {
+            direction: left-right
+            
+            layer "Stream Processing" {
+                gcp::analytics::Dataflow "Streaming ETL Job" as dataflow
+            }
+            
+            layer "Persistence" [fill_color="#E8F5E9", text_color="#1B5E20"] {
+                layout: vertical
+                gcp::storage::CloudStorage "Raw Data Lake" as gcs
+                gcp::analytics::BigQuery "Analytics DWH" as bq
+            }
+        }
+    }
+
+    // External BI Tool — green accent
+    box "Business Intelligence" [fill_color="#E8F5E9", border_color="#43A047", border_style="solid"] {
+        gcp::analytics::Looker "Looker Dashboards" as looker
+    }
+
+    // -----------------------------------------------------
+    // Connections &amp; Flows
+    // -----------------------------------------------------
+    
+    // User flow
+    user -&gt; lb : "HTTPS JSON Payload"
+    lb -&gt; api : "Route traffic"
+    
+    // Core Dataflow (Thick arrows)
+    api =&gt; pubsub : "Publish Event"
+    pubsub =&gt; dataflow : "Subscribe / Stream"
+    
+    // Forked writes
+    dataflow =&gt; gcs : "Backup Raw Events"
+    dataflow =&gt; bq : "Write Aggregated Metrics"
+    
+    // Analytical reads
+    looker -&gt; bq : "Query Data" [color="blue", style="dashed"]
+}
+</pre>
+            </div>
+        </div>
+
+        <div class="card" id="card_demo_target_dataarchitecture_map_svg">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title">Target Dataarchitecture Map (Example)</h3>
+                    <span class="badge badge-example">Example</span>
+                </div>
+                <div class="view-toggle">
+                    <button class="toggle-btn active" onclick="setView('demo_target_dataarchitecture_map_svg', 'image')">Diagram</button>
+                    <button class="toggle-btn" onclick="setView('demo_target_dataarchitecture_map_svg', 'source')">Source</button>
+                </div>
+            </div>
+            <div class="card-body image-view" id="image_demo_target_dataarchitecture_map_svg" ondblclick="openFullscreen('demo_target_dataarchitecture_map_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_target_dataarchitecture_map_svg')" title="View Fullscreen">⛶</button>
+                <img src="demo/target_dataarchitecture_map.svg" alt="Target Dataarchitecture Map (Example)">
+            </div>
+            <div class="card-body source-view" id="source_demo_target_dataarchitecture_map_svg" style="display: none; background-color: #1e293b; color: #f8fafc; text-align: left; justify-content: flex-start; align-items: stretch; min-height: 250px;" ondblclick="openFullscreen('demo_target_dataarchitecture_map_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_target_dataarchitecture_map_svg')" title="View Fullscreen" style="background-color: rgba(255, 255, 255, 0.15);">⛶</button>
+                <pre style="margin: 0; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; overflow: auto; width: 100%; white-space: pre-wrap; padding: 1rem;">architecture "Data Platform Design" {
+    box "DECISION SUPPORT / UTILIZATION (BUSINESS APPLICATIONS &amp; CONSUMERS)" as decision_support_bar [fillColor="#fff3e0", strokeColor="#ff9800", fontColor="#e65100"] {
+        layout: horizontal
+        direction: left-right
+        component "Finance Reporting Dashboard" as finance_reporting_app [fillColor="#ffe0b2", strokeColor="#ff9800", fontColor="#e65100"]
+    }
+    box "CORE DATA PIPELINE (INTEGRATION FLOWS, DATA WAREHOUSING &amp; COMPUTE)" as core_pipeline_tier [fillColor="#e3f2fd", strokeColor="#2196f3", fontColor="#0d47a1"] {
+        layout: horizontal
+        direction: left-right
+        box "DATA SOURCES" as col1_sources [fillColor="#f5f5f5", strokeColor="#9e9e9e", fontColor="#212121"] {
+            layout: vertical
+            direction: top-down
+            database "Production PostgreSQL Transaction Logs" as postgres_source [fillColor="#e1bee7", strokeColor="#7b1fa2", fontColor="#4a148c"]
+        }
+        box "DATA PROCESSING" as col2_processing [fillColor="#f5f5f5", strokeColor="#9e9e9e", fontColor="#212121"] {
+            layout: vertical
+            direction: top-down
+            box "Databricks Shared Serverless Pool" as databricks_serverless [fillColor="#ffcdd2", strokeColor="#d32f2f", fontColor="#b71c1c"] {
+                layout: grid
+                service "Sales Transaction Live Delta Pipeline" as databricks_dlt_pipeline [fillColor="#ffcdd2", strokeColor="#d32f2f", fontColor="#b71c1c"]
+            }
+        }
+        box "DATA STORAGE" as col3_storage [fillColor="#f5f5f5", strokeColor="#9e9e9e", fontColor="#212121"] {
+            layout: vertical
+            direction: top-down
+            storage "Delta Lakehouse - Bronze Ingestion Layer" as lakehouse_bronze [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+            storage "Delta Lakehouse - Silver Cleansed Layer" as lakehouse_silver [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+        }
+        box "DATA TARGETS" as col4_cloud [fillColor="#f5f5f5", strokeColor="#9e9e9e", fontColor="#212121"] {
+            layout: vertical
+            direction: top-down
+            service "Databricks Serverless Sales SQL Warehouse" as sales_sql_warehouse [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+        }
+    }
+    tier "COMPUTATIONAL GOVERNANCE &amp; PLATFORM OPERATIONS" as governance_bar [fillColor="#eceff1", strokeColor="#607d8b", fontColor="#37474f"]
+    postgres_source =&gt; lakehouse_bronze
+    lakehouse_bronze =&gt; lakehouse_silver
+    lakehouse_silver =&gt; sales_sql_warehouse
+    sales_sql_warehouse =&gt; finance_reporting_app
+    databricks_serverless =&gt; databricks_dlt_pipeline
+    databricks_dlt_pipeline =&gt; lakehouse_bronze
+    databricks_dlt_pipeline =&gt; lakehouse_silver
+}
+</pre>
+            </div>
+        </div>
+
+        <div class="card" id="card_demo_simple_diagram_svg">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title">Simple Diagram (Test Case)</h3>
+                    <span class="badge badge-test">Test Case</span>
+                </div>
+                <div class="view-toggle">
+                    <button class="toggle-btn active" onclick="setView('demo_simple_diagram_svg', 'image')">Diagram</button>
+                    <button class="toggle-btn" onclick="setView('demo_simple_diagram_svg', 'source')">Source</button>
+                </div>
+            </div>
+            <div class="card-body image-view" id="image_demo_simple_diagram_svg" ondblclick="openFullscreen('demo_simple_diagram_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_simple_diagram_svg')" title="View Fullscreen">⛶</button>
+                <img src="demo/simple_diagram.svg" alt="Simple Diagram (Test Case)">
+            </div>
+            <div class="card-body source-view" id="source_demo_simple_diagram_svg" style="display: none; background-color: #1e293b; color: #f8fafc; text-align: left; justify-content: flex-start; align-items: stretch; min-height: 250px;" ondblclick="openFullscreen('demo_simple_diagram_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_simple_diagram_svg')" title="View Fullscreen" style="background-color: rgba(255, 255, 255, 0.15);">⛶</button>
+                <pre style="margin: 0; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; overflow: auto; width: 100%; white-space: pre-wrap; padding: 1rem;">
+    architecture "Simple Diagram" {
+        actor "User" as user
+        
+        box "VPC Boundary" as vpc {
+            layout: horizontal
+            service "Web server" as web
+            database "DB server" as db
+        }
+        
+        user -&gt; web : "requests"
+        web -&gt; db : "queries" [color="blue", style="dashed"]
+    }
+    </pre>
+            </div>
+        </div>
+
+        <div class="card" id="card_demo_realtime_analytics_pipeline_svg">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title">Realtime Analytics Pipeline (Test Case)</h3>
+                    <span class="badge badge-test">Test Case</span>
+                </div>
+                <div class="view-toggle">
+                    <button class="toggle-btn active" onclick="setView('demo_realtime_analytics_pipeline_svg', 'image')">Diagram</button>
+                    <button class="toggle-btn" onclick="setView('demo_realtime_analytics_pipeline_svg', 'source')">Source</button>
+                </div>
+            </div>
+            <div class="card-body image-view" id="image_demo_realtime_analytics_pipeline_svg" ondblclick="openFullscreen('demo_realtime_analytics_pipeline_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_realtime_analytics_pipeline_svg')" title="View Fullscreen">⛶</button>
+                <img src="demo/realtime_analytics_pipeline.svg" alt="Realtime Analytics Pipeline (Test Case)">
+            </div>
+            <div class="card-body source-view" id="source_demo_realtime_analytics_pipeline_svg" style="display: none; background-color: #1e293b; color: #f8fafc; text-align: left; justify-content: flex-start; align-items: stretch; min-height: 250px;" ondblclick="openFullscreen('demo_realtime_analytics_pipeline_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_realtime_analytics_pipeline_svg')" title="View Fullscreen" style="background-color: rgba(255, 255, 255, 0.15);">⛶</button>
+                <pre style="margin: 0; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; overflow: auto; width: 100%; white-space: pre-wrap; padding: 1rem;">
+    architecture "Real-Time User Analytics Pipeline" {
+        actor "Mobile User" as user
+
+        box "GCP Virtual Private Cloud (VPC)" as vpc {
+            layout: vertical
+            
+            gcp::network::CloudLoadBalancing "Global HTTPs LB" as lb
+            
+            stack "Compute &amp; Ingestion" {
+                direction: left-right
+                
+                layer "API Gateway" {
+                    gcp::compute::CloudRun "Ingestion API" as api
+                }
+                
+                layer "Event Bus" {
+                    gcp::analytics::PubSub "Events Topic" as pubsub
+                }
+            }
+            
+            stack "Data Processing &amp; Storage" {
+                direction: left-right
+                
+                layer "Stream Processing" {
+                    gcp::analytics::Dataflow "Streaming ETL Job" as dataflow
+                }
+                
+                layer "Persistence" {
+                    layout: vertical
+                    gcp::storage::CloudStorage "Raw Data Lake" as gcs
+                    gcp::analytics::BigQuery "Analytics DWH" as bq
+                }
+            }
+        }
+
+        box "Business Intelligence" {
+            gcp::analytics::Looker "Looker Dashboards" as looker
+        }
+
+        user -&gt; lb : "HTTPS JSON Payload"
+        lb -&gt; api : "Route traffic"
+        
+        api =&gt; pubsub : "Publish Event"
+        pubsub =&gt; dataflow : "Subscribe / Stream"
+        
+        dataflow =&gt; gcs : "Backup Raw Events"
+        dataflow =&gt; bq : "Write Aggregated Metrics"
+        
+        looker -&gt; bq : "Query Data" [color="blue", style="dashed"]
+    }
+    </pre>
+            </div>
+        </div>
+
+        <div class="card" id="card_demo_attributes_and_tags_svg">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title">Attributes And Tags (Test Case)</h3>
+                    <span class="badge badge-test">Test Case</span>
+                </div>
+                <div class="view-toggle">
+                    <button class="toggle-btn active" onclick="setView('demo_attributes_and_tags_svg', 'image')">Diagram</button>
+                    <button class="toggle-btn" onclick="setView('demo_attributes_and_tags_svg', 'source')">Source</button>
+                </div>
+            </div>
+            <div class="card-body image-view" id="image_demo_attributes_and_tags_svg" ondblclick="openFullscreen('demo_attributes_and_tags_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_attributes_and_tags_svg')" title="View Fullscreen">⛶</button>
+                <img src="demo/attributes_and_tags.svg" alt="Attributes And Tags (Test Case)">
+            </div>
+            <div class="card-body source-view" id="source_demo_attributes_and_tags_svg" style="display: none; background-color: #1e293b; color: #f8fafc; text-align: left; justify-content: flex-start; align-items: stretch; min-height: 250px;" ondblclick="openFullscreen('demo_attributes_and_tags_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_attributes_and_tags_svg')" title="View Fullscreen" style="background-color: rgba(255, 255, 255, 0.15);">⛶</button>
+                <pre style="margin: 0; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; overflow: auto; width: 100%; white-space: pre-wrap; padding: 1rem;">
+    architecture "Attributes and Tags" {
+        service "Secure Web" as web [color="red", tags="secure,frontend"]
+        box "VPC Box" as vpc [fill="blue"] {
+            database "DB" as db
+        }
+    }
+    </pre>
+            </div>
+        </div>
+
+        <div class="card" id="card_demo_horizontal_diagram_svg">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title">Horizontal Diagram (Test Case)</h3>
+                    <span class="badge badge-test">Test Case</span>
+                </div>
+                <div class="view-toggle">
+                    <button class="toggle-btn active" onclick="setView('demo_horizontal_diagram_svg', 'image')">Diagram</button>
+                    <button class="toggle-btn" onclick="setView('demo_horizontal_diagram_svg', 'source')">Source</button>
+                </div>
+            </div>
+            <div class="card-body image-view" id="image_demo_horizontal_diagram_svg" ondblclick="openFullscreen('demo_horizontal_diagram_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_horizontal_diagram_svg')" title="View Fullscreen">⛶</button>
+                <img src="demo/horizontal_diagram.svg" alt="Horizontal Diagram (Test Case)">
+            </div>
+            <div class="card-body source-view" id="source_demo_horizontal_diagram_svg" style="display: none; background-color: #1e293b; color: #f8fafc; text-align: left; justify-content: flex-start; align-items: stretch; min-height: 250px;" ondblclick="openFullscreen('demo_horizontal_diagram_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_horizontal_diagram_svg')" title="View Fullscreen" style="background-color: rgba(255, 255, 255, 0.15);">⛶</button>
+                <pre style="margin: 0; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; overflow: auto; width: 100%; white-space: pre-wrap; padding: 1rem;">
+    architecture "Horizontal Diagram" {
+        direction: left-right
+        actor "User" as user
+        service "Web" as web
+    }
+    </pre>
+            </div>
+        </div>
+
+        <div class="card" id="card_demo_platform_architecture_svg">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title">Platform Architecture (Test Case)</h3>
+                    <span class="badge badge-test">Test Case</span>
+                </div>
+                <div class="view-toggle">
+                    <button class="toggle-btn active" onclick="setView('demo_platform_architecture_svg', 'image')">Diagram</button>
+                    <button class="toggle-btn" onclick="setView('demo_platform_architecture_svg', 'source')">Source</button>
+                </div>
+            </div>
+            <div class="card-body image-view" id="image_demo_platform_architecture_svg" ondblclick="openFullscreen('demo_platform_architecture_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_platform_architecture_svg')" title="View Fullscreen">⛶</button>
+                <img src="demo/platform_architecture.svg" alt="Platform Architecture (Test Case)">
+            </div>
+            <div class="card-body source-view" id="source_demo_platform_architecture_svg" style="display: none; background-color: #1e293b; color: #f8fafc; text-align: left; justify-content: flex-start; align-items: stretch; min-height: 250px;" ondblclick="openFullscreen('demo_platform_architecture_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_platform_architecture_svg')" title="View Fullscreen" style="background-color: rgba(255, 255, 255, 0.15);">⛶</button>
+                <pre style="margin: 0; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; overflow: auto; width: 100%; white-space: pre-wrap; padding: 1rem;">
+    architecture "Platform Architecture" {
+        box "Ingestion Layer" {
+            layout: horizontal
+            service "Web Frontend"
+            service "Mobile Gateway"
+        }
+        box "Processing Core" {
+            layout: horizontal
+            box "Stream Processing" {
+                layout: vertical
+                service "Kafka Topic"
+                service "Flink Job"
+            }
+            box "Batch Processing" {
+                layout: vertical
+                service "Airflow Scheduler"
+                service "Hadoop Cluster"
+            }
+        }
+    }
+    </pre>
+            </div>
+        </div>
+
+        <div class="card" id="card_demo_three_tier_web_app_svg">
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title">Three Tier Web App (Test Case)</h3>
+                    <span class="badge badge-test">Test Case</span>
+                </div>
+                <div class="view-toggle">
+                    <button class="toggle-btn active" onclick="setView('demo_three_tier_web_app_svg', 'image')">Diagram</button>
+                    <button class="toggle-btn" onclick="setView('demo_three_tier_web_app_svg', 'source')">Source</button>
+                </div>
+            </div>
+            <div class="card-body image-view" id="image_demo_three_tier_web_app_svg" ondblclick="openFullscreen('demo_three_tier_web_app_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_three_tier_web_app_svg')" title="View Fullscreen">⛶</button>
+                <img src="demo/three_tier_web_app.svg" alt="Three Tier Web App (Test Case)">
+            </div>
+            <div class="card-body source-view" id="source_demo_three_tier_web_app_svg" style="display: none; background-color: #1e293b; color: #f8fafc; text-align: left; justify-content: flex-start; align-items: stretch; min-height: 250px;" ondblclick="openFullscreen('demo_three_tier_web_app_svg')">
+                <button class="fullscreen-btn" onclick="openFullscreen('demo_three_tier_web_app_svg')" title="View Fullscreen" style="background-color: rgba(255, 255, 255, 0.15);">⛶</button>
+                <pre style="margin: 0; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; overflow: auto; width: 100%; white-space: pre-wrap; padding: 1rem;">
+    architecture "Three-Tier Web Application" {
+        direction: left-right
+        
+        actor "End User" as user [text-color="#1A73E8"]
+        
+        box "Presentation Tier (Web App)" as presentation_tier [background-color="#E8F0FE", border-color="#1A73E8", border-width="3", padding="20px"] {
+            layout: vertical
+            service "React Single Page Application" as web_client [background-color="#FFFFFF", border-color="#1A73E8"]
+            service "CDN Endpoint (Static Assets)" as cdn [background-color="#FFFFFF", border-color="#1A73E8", border-style="dashed"]
+        }
+        
+        box "Application Tier (API Services)" as app_tier [background-color="#E6F4EA", border-color="#137333", border-width="3", padding="20px", margin="0 40px"] {
+            layout: vertical
+            service "REST API Service (Go/Gin)" as api_srv [background-color="#FFFFFF", border-color="#137333"]
+            queue "Redis Cache Cluster" as cache [background-color="#FFFFFF", border-color="#137333", border-style="dotted"]
+        }
+        
+        box "Data Tier (Persistence)" as data_tier [background-color="#FCE8E6", border-color="#C5221F", border-width="3", padding="20px"] {
+            layout: vertical
+            database "Primary PostgreSQL DB" as primary_db [background-color="#FFFFFF", border-color="#C5221F"]
+            database "Replica DB (Read-Only)" as replica_db [background-color="#FFFFFF", border-color="#C5221F", border-style="dashed"]
+        }
+        
+        user -&gt; web_client : "HTTPS Requests"
+        web_client =&gt; api_srv : "API Calls"
+        api_srv =&gt; cache : "Cache Lookups"
+        api_srv =&gt; primary_db : "Write queries"
+        replica_db -&gt; primary_db : "Replication" [border-style="dashed"]
+    }
+    </pre>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="fullscreen-overlay" class="modal" onclick="closeFullscreen()">
+    <span class="close-modal">&times;</span>
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <!-- Content injected dynamically -->
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 archDraw. Generated automatically.</p>
+</footer>
+
+</body>
+</html>

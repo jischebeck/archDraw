@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="515.0" height="545.0">
+            <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5"
+                        markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#70757A" />
+                </marker>
+            </defs>
+            
+            <rect x="50" y="50" width="415.0" height="445.0" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="65" y="75" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="65" dy="0">Platform Architecture</tspan>
+        </text>
+        
+            
+            <rect x="65.0" y="90.0" width="385.0" height="115.0" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="80.0" y="115.0" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="80.0" dy="0">Ingestion Layer</tspan>
+        </text>
+        
+            
+                <rect x="80.0" y="130.0" width="140" height="60" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="150.0" y="165.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="150.0" dy="0">Web Frontend</tspan>
+        </text>
+        
+                
+                <rect x="235.0" y="130.0" width="140" height="60" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="305.0" y="165.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="305.0" dy="0">Mobile Gateway</tspan>
+        </text>
+        
+                
+            
+            <rect x="65.0" y="220.0" width="385.0" height="260.0" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="80.0" y="245.0" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="80.0" dy="0">Processing Core</tspan>
+        </text>
+        
+            
+            <rect x="80.0" y="260.0" width="170.0" height="205.0" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="95.0" y="285.0" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="95.0" dy="0">Stream</tspan><tspan x="95.0" dy="15.0">Processing</tspan>
+        </text>
+        
+            
+                <rect x="95.0" y="315.0" width="140" height="60" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="165.0" y="350.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="165.0" dy="0">Kafka Topic</tspan>
+        </text>
+        
+                
+                <rect x="95.0" y="390.0" width="140" height="60" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="165.0" y="425.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="165.0" dy="0">Flink Job</tspan>
+        </text>
+        
+                
+            
+            <rect x="265.0" y="260.0" width="170.0" height="205.0" 
+                  fill="#F8F9FA" stroke="#5F6368" stroke-width="2" stroke-dasharray="6,4" rx="8" />
+            
+        <text x="280.0" y="285.0" 
+              font-family="sans-serif" font-size="16" fill="#3C4043" 
+              font-weight="bold" text-anchor="start">
+            <tspan x="280.0" dy="0">Batch</tspan><tspan x="280.0" dy="15.0">Processing</tspan>
+        </text>
+        
+            
+                <rect x="280.0" y="315.0" width="140" height="60" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="350.0" y="350.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="350.0" dy="0">Airflow Scheduler</tspan>
+        </text>
+        
+                
+                <rect x="280.0" y="390.0" width="140" height="60" 
+                      fill="#E8F0FE" stroke="#1A73E8" stroke-width="2" rx="6" />
+                
+        <text x="350.0" y="425.0" 
+              font-family="sans-serif" font-size="14" fill="#1A73E8" 
+              font-weight="bold" text-anchor="middle">
+            <tspan x="350.0" dy="0">Hadoop Cluster</tspan>
+        </text>
+        
+                
+            
+            
+            
+            
+        </svg>

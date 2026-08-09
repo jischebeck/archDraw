@@ -1,0 +1,28 @@
+architecture "Data Platform Design" {
+    box "STRATEGY & PLATFORM LAYERS" as g_strategy_platform [fillColor="#fff3e0", strokeColor="#ff9800", fontColor="#e65100"] {
+        layout: horizontal
+        direction: left-right
+        component "#CapabilityGroup" as capabilitygroup [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+        component "#Capability" as capability [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+        component "#PlatformComponent" as platformcomponent [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+    }
+    box "BUSINESS & LOGICAL REALIZATION" as g_business_realization [fillColor="#e3f2fd", strokeColor="#2196f3", fontColor="#0d47a1"] {
+        layout: horizontal
+        direction: left-right
+        component "#Domain" as domain [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+        component "#DataObject" as dataobject [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+        component "#DataPipeline" as datapipeline [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+    }
+    box "GOVERNANCE & PLATFORM OPERATIONS" as g_governance_ops [fillColor="#eceff1", strokeColor="#607d8b", fontColor="#37474f"] {
+        layout: horizontal
+        direction: left-right
+        component "#AccessPolicy" as accesspolicy [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+        component "#Expectation" as expectation [fillColor="#f8f9fa", strokeColor="#cccccc", fontColor="#333333"]
+    }
+    capability => capabilitygroup
+    platformcomponent => capability
+    dataobject => domain
+    datapipeline => dataobject
+    accesspolicy => dataobject
+    expectation => dataobject
+}
