@@ -2,16 +2,22 @@
 
 This document contains instructions for agents working on `archDraw` to validate their code changes, understand the repository structure, use utility scripts, and follow best practices.
 
+For detailed design specs and algorithmic mechanics, see:
+- [**Architecture & Design Specification**](file:///home/jan/Projects/archDraw/doc/spec.md)
+- [**Layout & Routing Algorithm Specifications**](file:///home/jan/Projects/archDraw/doc/layout_algorithm.md)
+
 ---
 
 ## 1. Repository Structure
 
 The `archDraw` codebase is organized as follows:
+- [**`doc/`**](doc/): Architecture spec, DSL definitions, layout algorithm document, and showcase gallery.
 - [**`src/archDraw/`**](src/archDraw/): Core source code.
   - [**`core/`**](src/archDraw/core/): AST representation and DSL parsing logic (lexer/parser).
   - [**`layout/`**](src/archDraw/layout/): Geometric calculations, gap resolver, and alignment engines.
-  - [**`render/`**](src/archDraw/render/): SVG generation, style mapping, and text-wrapping choices.
+  - [**`render/`**](src/archDraw/render/): SVG generation, theme styles, text-wrapping, and routing pathfinders.
 - [**`tests/`**](tests/): Test suite containing parser and layout unit tests.
+
 - [**`examples/`**](examples/): Reference `.archDraw` files and their compiled SVGs.
 - [**`scripts/`**](scripts/): Development and automation utilities.
 
