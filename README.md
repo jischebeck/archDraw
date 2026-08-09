@@ -19,6 +19,8 @@ archDraw lets you describe infrastructure diagrams in plain text and generates p
 - **Cloud provider icons**: Built-in GCP component library with official icons and colors.
 - **Dual output**: SVG (vector, scalable) and PNG (raster, via `pyvips`).
 
+Interactive demo: [doc/demo.html](https://jischebeck.github.io/p/archDraw/demo.html).
+
 ---
 
 ## Why another text-to-diagram tool?
@@ -29,12 +31,6 @@ Traditional tools like **Mermaid** and **PlantUML** are fantastic for sequence d
 - Enforce strict hierarchical grid layout structures (horizontal columns, vertical layers, and stacks).
 - Keep connection routing clean and strictly orthogonal (VHV/HVH), avoiding the messy diagonal crossings common in graphviz-based engines.
 - Ensure nested containers auto-size and stretch dynamically to align boundaries and maximize page space.
-
----
-
-## Interactive Demo
-
-A live HTML showcase of all examples is available at [doc/demo.html](doc/demo/demo.html).
 
 ---
 
